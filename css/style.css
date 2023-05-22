@@ -149,6 +149,139 @@ main {
 	/* color: #7a64df; */
 }
 
+/*! media query */
+/* For Mobile devices: 320px-480px
+For Tablets or iPad: 480px - 768px
+For Laptop or small-size screen: 768px -1024px
+For Desktop or large-size screen: 1024px -1200px
+For Extra-large size device: 1200px and more */
+/** Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	/*! LAYOUT */
+	main {
+		position: relative;
+		width: 100rem;
+		height: auto;
+		/* background-color: rgba(255, 255, 255, 0.5); */
+		/* box-shadow: 0 2.75rem 0 black; */
+		border-radius: 2rem;
+		/* border: 0.75rem solid black; */
+		overflow: hidden;
+		display: flex;
+		/** modified: */
+		flex-direction: column;
+	}
+
+	/*! Left */
+	.left {
+		flex: 50%;
+		padding: 5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		/* transition: var(--trans-speed-default); */
+		gap: 1rem;
+		/* background-color: #ffffff66; */
+	}
+
+	.left--content {
+		position: relative;
+		text-transform: capitalize;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		/** modified: */
+		font-size: 2.75rem;
+	}
+
+	.hashtag {
+		/* color: var(--clr-night); */
+	}
+
+	.darkModeBtn {
+		position: absolute;
+		/* position: relative; */
+		top: 0;
+		left: 0;
+		transform: translate(40%, -50%) scale(0.35);
+		/* display: none; */
+	}
+
+	.twitter--handle {
+		position: relative;
+		/* color: var(--clr-twitter-day); */
+		background: none;
+		border: none;
+		font-family: inherit;
+		font-size: 1.5rem;
+		font-weight: bolder;
+		/* transition: var(--trans-speed-default); */
+		padding: 0.7rem 2.5rem;
+		border-radius: 50rem;
+		/* background-color: var(--clr-bg-twitter-day); */
+	}
+
+	/*! Right */
+	.js-img {
+		width: 2rem;
+		position: relative;
+		top: 1.1px;
+	}
+
+	.right {
+		/* background-color: #222; */
+		flex: 50%;
+		padding: 5rem;
+		display: grid;
+		gap: 1.5rem;
+		/* transition: var(--trans-speed-default); */
+	}
+
+	.list--items {
+		font-size: 1.75rem;
+		font-weight: bold;
+		/* color: var(--clr-night); */
+		margin-bottom: 0.125rem;
+		/* transition: var(--trans-speed-default); */
+	}
+
+	.list--items::marker {
+		/* color: var(--clr-accent-day); */
+	}
+
+	.list--title {
+		font-size: 3rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+		list-style: none;
+		/* color: var(--clr-accent-day); */
+		/* transition: var(--trans-speed-default); */
+	}
+
+	.list--nested {
+		padding-left: 0.125rem;
+		list-style: none;
+	}
+
+	.list--nested .list--items::before {
+		content: "➥ ";
+		/* color: var(--clr-accent-day); */
+	}
+
+	.colored {
+		transition: var(--trans-speed-default);
+		/* color: var(--clr-accent-day); */
+		/* color: #d3303d; */
+		/* color: #7a64df; */
+	}
+}
+/** Tablet */
+@media screen and (min-width: 480px) {
+}
+/** Small screens: laptop, etc.. */
+@media screen and (min-width: 480px) {
+}
+
 /*! === DARK MODE STARTS HERE === */
 .body--dark {
 	background-image: var(--clr-bg-night);
@@ -183,7 +316,8 @@ main {
 	color: var(--clr-accent-night);
 }
 
-.btn {
+/* TODO Clean this up */
+/* .btn {
 	position: relative;
 	display: inline-block;
 	width: 60px;
@@ -218,7 +352,7 @@ main {
 	background-color: white;
 	transition: var(--trans-speed-btn);
 	border-radius: 50%;
-}
+} */
 
 /*! ========= darkModeToggleBtn by @_Raunaq_ ========= */
 .darkModeBtn {
