@@ -1,25 +1,25 @@
-# Hello & welcome to my web site! 😃
+# Hello! I'm Chris King Vargas a Front-end Developer! 😃
 
 <!-- 😃 header -->
 <!-- 👨‍💻 body -->
 
-** Plan for current project: **
+**Plan for current project:**
 
 - [ ] Convert into a to do list.
-- \_[ ] have text field for user to add new items in the lists
-- \_[ ] User must be able to replace any text (⚠ with the exception of the twitter handle of course hahahahaha & the Day number)
+- [ ] ➥ have text field for user to add new items in the lists
+- [ ] ➥ User must be able to replace any text (⚠ exception of the twitter handle & day number)
 
-Short term goal:
+**Short Term**
 
-- [ ] Current Project: Daily Twitter posts
-- \_[ ] To be replaced by next project
-- \_[ ] Next project gallery
-- \_[ ] to be filled with completed projects
+- [ ] Current Project: [Daily Twitter posts](https://devckvargas.github.io/)
+- [ ] ➥ To be replaced by next project
+- [ ] ➥ Current project will be contained inside a gallery of projects
+- [ ] ➥ to be filled with completed projects
 
-Long term goal:
+**Long Term**
 
 - [ ] Portfolio
-      \_[ ]Compilation of worthy projects that I made this year.
+- [ ] ➥Compilation of worthy projects that I made this year.
 
 <!-- 🦶 Footer  -->
 <!-- template from: https://github.com/ai/size-limit#readme -->
