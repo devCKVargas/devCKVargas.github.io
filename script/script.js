@@ -29,14 +29,7 @@ const darkModeBtn = document.querySelector(`#hide-checkbox`); //* checkbox
 //** Initial values */
 const timeOfDay = new Date().getHours();
 dayNumber.innerText = `DAY ${currentDay}`;
-//** darkModeBtn flipper */
-if (!darkModeBtn.checked) {
-	darkModeBtn.checked = true;
-} else {
-	darkModeBtn.checked = false;
-}
-
-//TODO check if this is working
+//TODO animate auto mode (when time is 1PM)
 const autoModeAnimation = {
 	duration: 200,
 	iterations: 1,
@@ -50,22 +43,26 @@ const darkMode = () => {
 	colored[1].classList.toggle(`colored--dark`);
 	twitterHandle.classList.toggle(`twitter--handle--dark`);
 	rightBG.classList.toggle(`right--dark`);
+	//! Hash Tags color */
 	const hashTagToggler = () => {
 		for (let i = 0; i < hashTag.length; i++) {
 			hashTag[i].classList.toggle(`hashtag--dark`);
 		}
 	};
+	//! List Titles color */
 	const darkListTitleToggler = () => {
 		for (let i = 0; i < listTitle.length; i++) {
 			listTitle[i].classList.toggle(`list--title--dark`);
 		}
 	};
+	//! List Items color */
 	const darkListItemsToggler = () => {
 		for (let i = 0; i < listItems.length; i++) {
 			listItems[i].classList.toggle(`list--items--dark`);
 		}
 	};
-	const changeCodeTime = () => {
+	//! Interchange hashtag text: Morning 🔁 Afternoon */
+	const replaceString = () => {
 		if (codeTime.textContent.includes(`Morning`)) {
 			codeTime.textContent = codeTime.textContent.replace(
 				`Morning`,
@@ -78,15 +75,20 @@ const darkMode = () => {
 			);
 		}
 	};
-	changeCodeTime();
+	//! darkModeBtn flipper */\
+
+	replaceString();
 	hashTagToggler();
 	darkListTitleToggler();
 	darkListItemsToggler();
 };
 
-//? Automode: start at 1PM
+//! Automode: start at 1PM
 const autoMode = () => {
-	timeOfDay >= 13 ? (autoModeAnimation, darkMode()) : -1;
+	//? Turn on dark mode at 1PM (13:00), & turn off dark mode toggle button
+	timeOfDay >= 13
+		? (darkMode(), (darkModeBtn.checked = false))
+		: (darkModeBtn.checked = true);
 };
 autoMode();
 
