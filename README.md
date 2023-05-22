@@ -5,6 +5,7 @@
 
 **Plan for current project:**
 
+- [ ] Make it responsive.
 - [ ] Convert into a to do list.
 - [ ] ➥ have text field for user to add new items in the lists
 - [ ] ➥ User must be able to replace any text (⚠ exception of the twitter handle & day number)
@@ -19,9 +20,9 @@
 **Long Term**
 
 - [ ] Portfolio
-- [ ] ➥Compilation of worthy projects that I made this year.
+- [ ] ➥ Compilation of worthy projects that I made this year.
 
 <!-- 🦶 Footer  -->
 <!-- template from: https://github.com/ai/size-limit#readme -->
 
-This site was built using [GitHub Pages](https://pages.github.com/)
+This site was built using [GitHub Pages](https://pages.github.com/) 🚀
