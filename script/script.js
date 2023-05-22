@@ -86,7 +86,7 @@ const darkMode = () => {
 
 //? Automode: start at 1PM
 const autoMode = () => {
-	timeOfDay >= 13 ? (autoModeAnimation, changeCodeTime()) : -1;
+	timeOfDay >= 13 ? (autoModeAnimation, darkMode()) : -1;
 };
 autoMode();
 
