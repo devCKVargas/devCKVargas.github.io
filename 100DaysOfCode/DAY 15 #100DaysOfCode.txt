@@ -17,7 +17,12 @@ DAY 15 #100DaysOfCode
 #AfternoonCode 
 
 📖 New Knowledge
-•
+• Github basic writing and formatting syntax
+• Github SSH key
+• GitHub.dev
 
 👨‍💻 This web page
-•
+• Pushed to GitHub
+    ➥ Deployed to GitHub pages
+• Started media query
+• Refactored some JavaScript codes

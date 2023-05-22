@@ -40,6 +40,7 @@ const darkMode = () => {
 	document.body.classList.toggle(`body--dark`);
 	leftBG.classList.toggle(`left--dark`);
 	dayNumber.classList.toggle(`colored--dark`);
+	//**TODO: Check colored array */
 	colored[1].classList.toggle(`colored--dark`);
 	twitterHandle.classList.toggle(`twitter--handle--dark`);
 	rightBG.classList.toggle(`right--dark`);
