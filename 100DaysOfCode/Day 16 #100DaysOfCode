@@ -8,8 +8,8 @@ DAY 16 #100DaysOfCode
     ➥ Nullish assignment operator (??=)
     
 👨‍💻 This web page
-Added: Dark mode toggle button
-    ➥ Credit to: @_Raunaq_
+• Fix: dark mode not working for most of the elements when a class does not 
+exist.
 
 DAY 16 #100DaysOfCode
 #AfternoonCode 
@@ -18,3 +18,4 @@ DAY 16 #100DaysOfCode
 
 
 👨‍💻 This web page
+
