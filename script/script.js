@@ -4,7 +4,7 @@
 //? //** CHANGE DAY HERE */
 //? //** CHANGE DAY HERE */
 //TODO turn this 👇 into a function
-const currentDay = 15;
+const currentDay = 16;
 //TODO turn this ☝ into a function
 //? //** CHANGE DAY HERE */
 //? //** CHANGE DAY HERE */
@@ -41,7 +41,7 @@ const darkMode = () => {
 	leftBG.classList.toggle(`left--dark`);
 	dayNumber.classList.toggle(`colored--dark`);
 	//**TODO: Check colored array */
-	colored[1].classList.toggle(`colored--dark`);
+	// colored[1].classList.toggle(`colored--dark`);
 	twitterHandle.classList.toggle(`twitter--handle--dark`);
 	rightBG.classList.toggle(`right--dark`);
 	//! Hash Tags color */
