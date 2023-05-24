@@ -2,10 +2,11 @@
 
 /*! Variables */
 :root {
+	--clr-main-bg: hsla(0, 0%, 100%, 0.5);
+	--clr-bg-day-left: hsla(0, 0%, 100%, 0.4);
 	--clr-day: hsl(0, 0%, 82%);
-	--clr-day-left: ;
 	--clr-night: hsla(0, 0%, 0.1%, 0.9);
-	--clr-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.9);
 	--clr-accent-day: hsl(343, 57%, 50%);
 	--clr-accent-night: hsl(17, 64%, 53%);
 	--clr-bg-day: linear-gradient(to top left, #64abfc 0%, #345df9 100%);
@@ -28,34 +29,33 @@ html {
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+	color: var(--clr-haha);
+}
+
 body {
 	font-family: "Nunito", sans-serif;
 	font-weight: 400;
 	height: 100vh;
-	color: var(--clr-default);
 	background: var(--clr-bg-day);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-body::after {
-	content: url("../images/night.jpg");
-	/* background: url("../images/night.jpg") right top;
-	background: url("../images/cloud.jpg") right top; */
-	/* background-position: right top; */
-	background-size: cover;
+.body::after {
+	content: "";
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background-repeat: no-repeat;
 	z-index: -1;
+	background: no-repeat center/cover url("../images/cloud.jpg");
 	opacity: 0.3;
 }
 
-a {
-	text-decoration: none;
-	color: var(--clr-default);
+.body--dark {
+	background: var(--clr-bg-night);
 }
 
 /*! LAYOUT */
@@ -63,12 +63,13 @@ main {
 	position: relative;
 	width: 100rem;
 	height: auto;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: var(--clr-main-bg);
 	box-shadow: 0 2.75rem 0 black;
 	border-radius: 2rem;
 	border: 0.75rem solid black;
 	overflow: hidden;
 	display: flex;
+	/* transform: scale(1.5); */
 }
 
 /*! Left */
@@ -81,7 +82,7 @@ main {
 	align-items: flex-start;
 	transition: var(--trans-speed-default);
 	gap: 1rem;
-	background-color: hsla(0, 0%, 100%, 0.4);
+	background-color: var(--clr-bg-day-left);
 }
 
 .left--content {
@@ -309,7 +310,7 @@ For Extra-large size device: 1200px and more */
 	color: var(--clr-day);
 }
 .right--dark {
-	background-color: var(--clr-night-right);
+	background-color: var(--clr-bg-night-right);
 }
 .list--items--dark {
 	color: var(--clr-day);
