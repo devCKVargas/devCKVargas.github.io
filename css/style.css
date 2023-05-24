@@ -2,15 +2,17 @@
 
 /*! Variables */
 :root {
-	--clr-day: #d2d2d2;
-	--clr-night: #000000e6;
-	--clr-accent-day: #c7365f;
-	--clr-accent-night: #d46438;
+	--clr-day: hsl(0, 0%, 82%);
+	--clr-day-left: ;
+	--clr-night: hsla(0, 0%, 0.1%, 0.9);
+	--clr-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-accent-day: hsl(343, 57%, 50%);
+	--clr-accent-night: hsl(17, 64%, 53%);
 	--clr-bg-day: linear-gradient(to top left, #64abfc 0%, #345df9 100%);
 	--clr-bg-night: linear-gradient(to top left, #9b4679 0%, #213dae 100%);
-	--clr-twitter-day: #333;
-	--clr-bg-twitter-day: #ffffff4d;
-	--clr-bg-twitter-night: #000000e6;
+	--clr-twitter-day: hsl(0, 0%, 20%);
+	--clr-bg-twitter-day: hsla(0, 0%, 100%, 0.3);
+	--clr-bg-twitter-night: hsla(0, 0%, 0.5%, 0.9);
 	--trans-speed-default: all 0.75s;
 	--trans-speed-btn: 0.4s;
 }
@@ -31,10 +33,24 @@ body {
 	font-weight: 400;
 	height: 100vh;
 	color: var(--clr-default);
-	background-image: var(--clr-bg-day);
+	background: var(--clr-bg-day);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+body::after {
+	content: url("../images/night.jpg");
+	/* background: url("../images/night.jpg") right top;
+	background: url("../images/cloud.jpg") right top; */
+	/* background-position: right top; */
+	background-size: cover;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	z-index: -1;
+	opacity: 0.3;
 }
 
 a {
@@ -65,7 +81,7 @@ main {
 	align-items: flex-start;
 	transition: var(--trans-speed-default);
 	gap: 1rem;
-	background-color: #ffffff66;
+	background-color: hsla(0, 0%, 100%, 0.4);
 }
 
 .left--content {
@@ -102,7 +118,6 @@ span .js--logo {
 }
 
 .right {
-	/* background-color: #222; */
 	flex: 50%;
 	padding: 5rem;
 	padding-left: 8rem;
@@ -233,7 +248,6 @@ For Extra-large size device: 1200px and more */
 	}
 
 	.right {
-		/* background-color: #222; */
 		flex: 50%;
 		padding: 5rem;
 		display: grid;
@@ -279,19 +293,13 @@ For Extra-large size device: 1200px and more */
 		/* color: #7a64df; */
 	}
 }
-/** Tablet */
-@media screen and (min-width: 480px) {
-}
-/** Small screens: laptop, etc.. */
-@media screen and (min-width: 480px) {
-}
 
-/*! === DARK MODE STARTS HERE === */
+/*? === DARK MODE STARTS HERE === */
 .body--dark {
-	background-image: var(--clr-bg-night);
+	background: var(--clr-bg-night);
 }
 .left--dark {
-	background-color: #0b0b0b;
+	background-color: var(--clr-night);
 }
 .hashtag--dark {
 	color: #6250b3;
@@ -301,7 +309,7 @@ For Extra-large size device: 1200px and more */
 	color: var(--clr-day);
 }
 .right--dark {
-	background-color: #222;
+	background-color: var(--clr-night-right);
 }
 .list--items--dark {
 	color: var(--clr-day);
@@ -395,33 +403,6 @@ For Extra-large size device: 1200px and more */
 	box-shadow: 0 0 35px 4px rgba(255, 255, 255);
 	transition: all 500ms ease-out;
 }
-
-/* ! ========= V2 Starts here ========= 
-.toggle:before {
-	content: "PM";
-	position: fixed;
-	color: var(--clr-accent-night);
-	font-size: 5rem;
-	top: 0;
-	left: 0;
-	transform: translate(-150%, 25%);
-}
-.toggle:after {
-	content: "AM";
-	position: fixed;
-	color: #749ed7;
-	font-size: 5rem;
-	top: 0;
-	right: 0;
-	transform: translate(150%, 25%);
-}
-input:checked + .toggle:before {
-	color: #749ed7;
-}
-input:checked + .toggle:after {
-	color: var(--clr-accent-day);
-}
-! ========= END ========= */
 
 .crater {
 	position: absolute;

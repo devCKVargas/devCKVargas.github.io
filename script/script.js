@@ -1,8 +1,5 @@
 `use strict`;
 
-//? FOR NOW CHANGE DAY HERE or call dayCounter() */
-let currentDay = 16;
-
 //* Selecting elements */
 const leftBG = document.querySelector(`.left`);
 const dayNumber = document.querySelector(`.day`);
@@ -16,25 +13,19 @@ const listItems = document.querySelectorAll(`.list--items`);
 const listTitle = document.querySelectorAll(`.list--title`);
 const darkModeBtn = document.querySelector(`#hide-checkbox`); //* checkbox
 
-//* Not working */
-
-//* Initial values */
-const timeOfDay = new Date().getHours();
-dayNumber.innerText = `DAY ${currentDay}`;
-
-//? Fix day counter - Done on: 05/23/2023
+//? Added day counter on: 05/23/2023 && Fixed on: 05/24/2023
 const dayCounter = () => {
-	const dateStart = new Date(2023, 04, 06);
-	const dateNow = new Date() / (1000 * 3600 * 24);
-	const dateComplete = new Date(2023, 07, 14);
-	const remainingDays =
-		(dateComplete.getTime() - dateStart.getTime()) / (1000 * 3600 * 24);
-	const spentDays = Math.trunc((dateNow - remainingDays) / 1000) - 1;
+	const dateStart = new Date(2023, 04, 06).getTime() / (1000 * 3600 * 24);
+	const dateNow = new Date().getTime() / (1000 * 3600 * 24);
+	const dateComplete = new Date(2023, 07, 14).getTime() / (1000 * 3600 * 24);
+	const remainingDays = dateComplete - dateNow;
+	console.log(remainingDays);
+	const spentDays = Math.ceil(100 - remainingDays);
 	console.log(spentDays);
-
-	dayNumber.innerText = `DAY ${spentDays}`;
+	let daysBehind = 2; //TODO add if behind */
+	dayNumber.innerText = `DAY ${spentDays - daysBehind}`;
 };
-// dayCounter(); //TODO turn this on once first day 100 is completed
+dayCounter();
 
 //TODO animate auto mode (when time is 1PM)
 const autoModeAnimation = {
@@ -42,7 +33,7 @@ const autoModeAnimation = {
 	iterations: 1,
 };
 
-//* DARK MODE STARTS HERE */
+//? DARK MODE STARTS HERE */
 const darkMode = () => {
 	document.body.classList.toggle(`body--dark`);
 	leftBG.classList.toggle(`left--dark`);
@@ -75,6 +66,7 @@ const darkMode = () => {
 };
 //? Automode: start at 1PM
 const autoMode = () => {
+	const timeOfDay = new Date().getHours();
 	//? Turn on dark mode at 1PM (13:00), & turn off dark mode toggle button
 	timeOfDay >= 13
 		? (darkMode(), (darkModeBtn.checked = false))
