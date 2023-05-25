@@ -44,6 +44,16 @@ body {
 	justify-content: center;
 }
 
+.body::before {
+	/* content: "</>"; */
+	content: ">_";
+	position: fixed;
+	font-size: 8rem;
+	bottom: 0.5%;
+	right: 2%;
+	color: var(--clr-accent-day);
+}
+
 .body::after {
 	content: "";
 	position: fixed;
@@ -52,6 +62,10 @@ body {
 	z-index: -1;
 	background: no-repeat center/cover url("../images/cloud.jpg");
 	opacity: 0.3;
+}
+
+.body--dark::before {
+	color: var(--clr-accent-night);
 }
 
 .body--dark {

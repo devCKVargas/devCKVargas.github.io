@@ -57,7 +57,7 @@ const darkMode = () => {
 			? (codeTime.text = `#AfternoonCode`)
 			: (codeTime.text = `#MorningCode`);
 	};
-	morningAfternoonCodeSwap();
+	// morningAfternoonCodeSwap();
 	hashTagToggler();
 	darkListTitleToggler();
 	darkListItemsToggler();
