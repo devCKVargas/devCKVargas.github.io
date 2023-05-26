@@ -1,0 +1,63 @@
+/*! ========= Toggle Switch by @fydsa ========= */
+:root {
+	--clr-main-bg: hsla(0, 0%, 100%, 0.5);
+	--clr-bg-day-left: hsla(0, 0%, 100%, 0.4);
+	--clr-day: hsl(0, 0%, 82%);
+	--clr-night: hsla(0, 0%, 0.1%, 0.9);
+	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-twitter-day: hsl(0, 0%, 20%);
+	--clr-bg-twitter-day: hsla(0, 0%, 100%, 0.3);
+	--clr-bg-twitter-night: hsla(0, 0%, 0.5%, 0.9);
+	--clr-bg-toggle-btn: #d9dff4;
+	--clr-bg-toggle-btn-night: hsl(225, 5%, 16%);
+}
+
+.toggle-switch {
+	position: relative;
+	/* width: 200px; */
+}
+
+label {
+	position: absolute;
+	width: 80%;
+	height: 50px;
+	background-color: var(--clr-bg-toggle-btn-night);
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+input {
+	position: absolute;
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	transition: 0.3s;
+}
+
+input:checked ~ .slider {
+	background-color: var(--clr-bg-toggle-btn);
+}
+
+.slider::before {
+	content: "";
+	position: absolute;
+	top: 7.5px;
+	left: 9px;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	box-shadow: inset 15px -4px 0px 0px var(--clr-accent-night);
+	background-color: var(--dark);
+	transition: 0.3s;
+}
+
+input:checked ~ .slider::before {
+	transform: translateX(48px);
+	background-color: var(--clr-accent-day);
+	box-shadow: none;
+}

@@ -11,7 +11,7 @@ const twitterHandle = document.querySelector(`.twitter--handle`);
 const rightBG = document.querySelector(`.right`);
 const listItems = document.querySelectorAll(`.list--items`);
 const listTitle = document.querySelectorAll(`.list--title`);
-const darkModeBtn = document.querySelector(`#hide-checkbox`); //* checkbox
+const darkModeBtn = document.querySelector(`#dark-mode-btn`); //* checkbox
 
 //? Added day counter on: 05/23/2023 && Fixed on: 05/24/2023
 const dayCounter = () => {
@@ -21,7 +21,7 @@ const dayCounter = () => {
 	const remainingDays = dateComplete - dateNow;
 	const spentDays = Math.ceil(100 - remainingDays);
 	let daysBehind = 2; //TODO add if behind */
-	dayNumber.innerText = `DAY ${spentDays - daysBehind}`;
+	dayNumber.innerText = `DAY ${spentDays - daysBehind} of`;
 };
 dayCounter();
 
