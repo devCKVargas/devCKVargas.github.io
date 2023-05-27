@@ -51,13 +51,6 @@ const darkMode = () => {
 	const darkListItemsToggler = () => {
 		for (const items of listItems) items.classList.toggle(`list--items--dark`);
 	};
-	//? Interchange hashtag text: Morning 🔁 Afternoon */
-	const morningAfternoonCodeSwap = () => {
-		codeTime.text.includes(`Morning`)
-			? (codeTime.text = `#AfternoonCode`)
-			: (codeTime.text = `#MorningCode`);
-	};
-	// morningAfternoonCodeSwap();
 	hashTagToggler();
 	darkListTitleToggler();
 	darkListItemsToggler();

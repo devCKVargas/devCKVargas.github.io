@@ -14,13 +14,13 @@
 
 .toggle-switch {
 	position: relative;
-	/* width: 200px; */
+	width: 125px;
 }
 
 label {
 	position: absolute;
-	width: 80%;
-	height: 50px;
+	width: 100%;
+	height: 70px;
 	background-color: var(--clr-bg-toggle-btn-night);
 	border-radius: 50px;
 	cursor: pointer;
@@ -46,18 +46,18 @@ input:checked ~ .slider {
 .slider::before {
 	content: "";
 	position: absolute;
-	top: 7.5px;
-	left: 9px;
-	width: 35px;
-	height: 35px;
+	top: 7px;
+	left: 10px;
+	width: 55px;
+	height: 55px;
 	border-radius: 50%;
-	box-shadow: inset 15px -4px 0px 0px var(--clr-accent-night);
+	box-shadow: inset 21px -4px 0px 0px var(--clr-accent-night);
 	background-color: var(--dark);
 	transition: 0.3s;
 }
 
 input:checked ~ .slider::before {
-	transform: translateX(48px);
+	transform: translateX(52px);
 	background-color: var(--clr-accent-day);
 	box-shadow: none;
 }

@@ -16,6 +16,8 @@
 	--clr-bg-twitter-night: hsla(0, 0%, 0.5%, 0.9);
 	--trans-speed-default: all 0.75s;
 	--trans-speed-btn: 0.4s;
+	/* color: #d3303d; */
+	/* color: #7a64df; */
 }
 
 * {
@@ -25,7 +27,6 @@
 }
 
 html {
-	font-size: 62.5%;
 	box-sizing: border-box;
 }
 
@@ -45,7 +46,6 @@ body {
 }
 
 .body::before {
-	/* content: "</>"; */
 	content: ">_";
 	position: fixed;
 	font-size: 8rem;
@@ -83,7 +83,6 @@ main {
 	border: 0.75rem solid black;
 	overflow: hidden;
 	display: flex;
-	/* transform: scale(1.5); */
 }
 
 /*! Left */
@@ -118,7 +117,7 @@ main {
 
 .toggle-switch {
 	grid-area: toggleBtn;
-	top: 10%;
+	top: 15%;
 }
 
 .hashtag {
@@ -161,6 +160,7 @@ span .js--logo {
 	color: var(--clr-night);
 	margin-bottom: 0.125rem;
 	transition: var(--trans-speed-default);
+	word-spacing: 0.5px;
 }
 
 .list--items::marker {
@@ -183,14 +183,13 @@ span .js--logo {
 
 .list--nested .list--items::before {
 	content: "➥ ";
+	padding-left: 3rem; /*//? indent */
 	color: var(--clr-accent-day);
 }
 
 .colored {
 	transition: var(--trans-speed-default);
 	color: var(--clr-accent-day);
-	/* color: #d3303d; */
-	/* color: #7a64df; */
 }
 
 .hidden {

@@ -4,7 +4,7 @@ JavaScript Data Structures Modern Operators and Strings
 
 📖 Today`s discoveries
 • Sets: has unique values with no index
-• Maps: same as Obj but keys can by any types
+• Maps: same as Obj but keys can be any type
 Channing Map methods
 Convert Object to Map
 Convert Map to Array
@@ -23,6 +23,6 @@ using the spread operator is mostly helpful esp in arrays
 }
 
 👨‍💻 This web page
-Modified: dark mode button(by @fydsa)
-Added: CSS file for dark mode button & mediaqueries
-Removed: unused CSS lines
+• Modified: dark mode button(by @fydsa)
+• Added: CSS file for dark mode button & mediaqueries
+• Removed: unused CSS lines
