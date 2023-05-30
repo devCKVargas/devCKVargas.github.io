@@ -183,7 +183,7 @@ span .js--logo {
 
 .list--nested .list--items::before {
 	content: "➥ ";
-	/* padding-left: 3rem; */
+	padding-left: 3rem; /*//? indent */
 	color: var(--clr-accent-day);
 }
 
