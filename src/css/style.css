@@ -20,14 +20,14 @@
 	/* color: #7a64df; */
 }
 
+html {
+	box-sizing: border-box;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: inherit;
-}
-
-html {
-	box-sizing: border-box;
 }
 
 a {
@@ -60,7 +60,7 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background: no-repeat center/cover url("../images/cloud.jpg");
+	background: no-repeat center/cover url("../assets/cloud.jpg");
 	opacity: 0.3;
 }
 
@@ -200,32 +200,41 @@ span .js--logo {
 .body--dark {
 	background: var(--clr-bg-night);
 }
+
 .left--dark {
 	background-color: var(--clr-night);
 }
+
 .hashtag--dark {
 	color: #6250b3;
 }
+
 .twitter--handle--dark {
 	background-color: var(--clr-bg-twitter-night);
 	color: var(--clr-day);
 }
+
 .right--dark {
 	background-color: var(--clr-bg-night-right);
 }
+
 .list--items--dark {
 	color: var(--clr-day);
 }
+
 .list--items--dark::marker {
 	color: var(--clr-accent-night);
 }
+
 .list--title--dark {
 	color: var(--clr-accent-night);
 }
+
 .list--nested .list--items--dark::before {
 	content: "➥ ";
 	color: var(--clr-accent-night);
 }
+
 .colored--dark {
 	color: var(--clr-accent-night);
 }

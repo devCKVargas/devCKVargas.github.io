@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/*? Global Variables */
+:root {
+	--clr-bg-main: hsla(0, 0%, 100%, 0.5);
+	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-bg-day-left: hsla(0, 0%, 100%, 0.4);
+	--clr-night: hsla(0, 0%, 0.1%, 0.9);
+	--clr-accent-day: hsl(343, 57%, 50%);
+	--clr-accent-night: hsl(17, 64%, 53%);
+	--clr-links-day: hsl(0, 0%, 20%);
+	--clr-bg-toggle-btn: #d9dff4;
+	--clr-bg-toggle-btn-night: hsl(225, 5%, 16%);
+	/** new */
+	--clr-day: hsl(0, 0%, 82%);
+	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-bg-day: linear-gradient(to top left, #64abfc 0%, #345df9 100%);
+	--clr-bg-night: linear-gradient(to top left, #9b4679 0%, #213dae 100%);
+	--clr-bg-twitter-day: hsla(0, 0%, 100%, 0.3);
+
+}
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: -webkit-fill-available;
+	font: bold 1rem "Nunito";
+}
+
+
+body {
+	background: var(--clr-bg-day);
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	height: 100svh;
+	/* height: -webkit-fill-available; */
+}
+
+body::before {
+	content: ">_";
+	position: fixed;
+	font-size: 3rem;
+	bottom: 0.5%;
+	right: 2%;
+	color: var(--clr-accent-day);
+}
+
+body::after {
+	content: '';
+	background: top/cover url(../assets/cloud.jpg);
+
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+}
+
+/*? LAYOUT */
+main {
+	position: relative;
+	background: var(--clr-bg-main);
+	border: 0.2em solid black;
+	box-shadow: 0 2em 0 black;
+	border-radius: 1rem;
+	max-width: 1600px;
+	display: grid;
+	overflow: hidden;
+}
+
+/* ? Left */
+section.left {
+	background-color: var(--clr-bg-day-left);
+	padding: 3rem;
+	/* border-radius: 1rem 1rem 0 0; */
+	display: grid;
+	place-items: center;
+	position: relative;
+}
+
+.left--content {
+	display: grid;
+}
+
+.left--content--heading {
+	display: flex;
+	gap: min(2rem, 3vw);
+}
+
+.left--content--heading--day {
+	font-size: 1.35em;
+}
+
+.hashtag {
+	color: var(--clr-links-day);
+	font-size: 1.1125em;
+}
+
+.left--content--links {
+	display: grid;
+	gap: 0.4rem;
+}
+
+.twitter-handle {
+	color: var(--clr-links-day);
+	border-radius: 5rem;
+	padding: 0.125rem 0.75rem;
+	background-color: var(--clr-bg-twitter-day);
+	font-size: 0.9125em;
+}
+
+/*? Toggle Button (Dark Mode) */
+.toggle-switch {
+	position: relative;
+	width: 4.25rem;
+}
+
+label {
+	position: absolute;
+	width: 85%;
+	/* height: 2.35rem; */
+	height: 100%;
+	background-color: var(--clr-bg-toggle-btn-night);
+	border-radius: 5rem;
+	cursor: pointer;
+}
+
+input {
+	position: absolute;
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	transition: 0.3s;
+}
+
+input:checked~.slider {
+	background-color: var(--clr-bg-toggle-btn);
+}
+
+.slider::before {
+	content: "";
+	position: absolute;
+	top: 0.168rem;
+	left: 0.3rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	box-shadow: inset 0.65rem -4px 0px 0px var(--clr-accent-night);
+	background-color: var(--dark);
+	transition: 0.3s;
+}
+
+input:checked~.slider::before {
+	transform: translateX(1.6rem);
+	background-color: var(--clr-accent-day);
+	box-shadow: none;
+}
+
+/*? Dark Mode */
+.body--dark {
+	background: var(--clr-bg-night);
+}
+
+/*? Right */
+section.right {
+	padding: 1.75rem 2.5rem;
+}
+
+.right--content {
+	font-size: 1rem;
+}
+
+.colored {
+	color: var(--clr-accent-day);
+}

@@ -1,0 +1,149 @@
+/*! media query */
+/* For Mobile devices: 320px-480px
+For Tablets or iPad: 480px - 768px
+For Laptop or small-size screen: 768px -1024px
+For Desktop or large-size screen: 1024px -1200px
+For Extra-large size device: 1200px and more */
+/** Laptop */
+@media screen and (min-width: 480px) {
+
+    /*? Tablet - Toggle Button (Dark Mode) */
+    .toggle-switch {
+        width: 6.5rem;
+    }
+
+    label {
+        width: 100%;
+        /* height: 2.35rem; */
+        height: 85%;
+    }
+
+    .slider::before {
+        top: 0.34rem;
+        left: 0.5rem;
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 50%;
+        box-shadow: inset 1.195rem -4px 0px 0px var(--clr-accent-night);
+    }
+
+    input:checked~.slider::before {
+        transform: translateX(2.45rem);
+    }
+
+    /*? Main-tablet */
+    main {
+        border: 0.6em solid black;
+        border-radius: 1.75rem;
+        box-shadow: 0 2em 0 black;
+    }
+
+    /*? Left-Tablet */
+    .left--content--heading--day {
+        font-size: 3.35em;
+    }
+
+    .hashtag {
+        font-size: 2.75em;
+    }
+
+    .left--content--links {
+        gap: 1rem;
+    }
+
+    p {
+        margin: 0 auto;
+    }
+
+    .twitter-handle {
+        font-size: 1.5em;
+        padding: 0.5rem 1.5rem;
+    }
+
+    /*? Right-Tablet */
+    section.right {
+        padding: 2.25rem 3.5rem;
+    }
+
+    .right--content {
+        font-size: 1.5rem;
+    }
+}
+
+/** Desktop */
+@media screen and (min-width: 1024px) {
+
+    /*? Tablet - Toggle Button (Dark Mode) */
+    .toggle-switch {
+        width: 7.5rem;
+        top: 1.125rem;
+    }
+
+    label {
+        width: 100%;
+        /* height: 2.35rem; */
+        height: 65%;
+    }
+
+    .slider::before {
+        top: 0.35rem;
+        left: 0.5rem;
+        width: 3.55rem;
+        height: 3.55rem;
+        border-radius: 50%;
+        box-shadow: inset 1.5rem -4px 0px 0px var(--clr-accent-night);
+    }
+
+    input:checked~.slider::before {
+        transform: translateX(3rem);
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "left right";
+    }
+
+    section.left {
+        grid-area: left;
+        justify-items: start;
+        align-items: center;
+    }
+
+
+    .left--content--heading {
+        justify-content: space-between;
+    }
+
+    .left--content--heading--day,
+    .hashtag {
+        font-size: 4.75rem;
+    }
+
+    .left--content--links {
+        gap: 3rem;
+    }
+
+    p {
+        margin: initial;
+    }
+
+    .twitter-handle {
+        font-size: 1.5rem;
+        padding: 0.7rem 2.5rem;
+    }
+
+    /*? Right */
+    section.right {
+        grid-area: right;
+    }
+
+    section.right {
+        padding: 3rem 5rem;
+        padding-right: 3.5rem;
+    }
+
+    .right--content {
+        font-size: 1.75rem;
+    }
+
+}
