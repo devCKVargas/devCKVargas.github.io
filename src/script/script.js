@@ -2,12 +2,12 @@
 
 //* Selecting elements */
 const leftBG = document.querySelector(`.left`);
-const dayNumber = document.querySelector(`.day`);
+const dayNumber = document.querySelector(`.left--content--heading--day`);
 const leftContent = document.querySelector(`.left--content`);
 const hashTag = document.querySelectorAll(`.hashtag`);
 const codeTime = document.getElementById(`code--time`);
 const colored = document.querySelectorAll(`.colored`);
-const twitterHandle = document.querySelector(`.twitter--handle`);
+const twitterHandle = document.querySelector(`.twitter-handle`);
 const rightBG = document.querySelector(`.right`);
 const listItems = document.querySelectorAll(`.list--items`);
 const listTitle = document.querySelectorAll(`.list--title`);
@@ -35,7 +35,7 @@ const autoModeAnimation = {
 const darkMode = () => {
 	document.body.classList.toggle(`body--dark`);
 	leftBG.classList.toggle(`left--dark`);
-	twitterHandle.classList.toggle(`twitter--handle--dark`);
+	twitterHandle.classList.toggle(`twitter-handle--dark`);
 	rightBG.classList.toggle(`right--dark`);
 	//? colored elements */
 	for (const items of colored) items.classList.toggle(`colored--dark`);

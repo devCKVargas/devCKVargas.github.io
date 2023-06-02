@@ -4,26 +4,25 @@ For Tablets or iPad: 480px - 768px
 For Laptop or small-size screen: 768px -1024px
 For Desktop or large-size screen: 1024px -1200px
 For Extra-large size device: 1200px and more */
-/** Laptop */
+/** Tablet */
 @media screen and (min-width: 480px) {
 
     /*? Tablet - Toggle Button (Dark Mode) */
     .toggle-switch {
+        top: 0.5rem;
         width: 6.5rem;
     }
 
     label {
         width: 100%;
         /* height: 2.35rem; */
-        height: 85%;
+        height: 80%;
     }
 
     .slider::before {
-        top: 0.34rem;
-        left: 0.5rem;
+        top: 0.3rem;
         width: 3.125rem;
         height: 3.125rem;
-        border-radius: 50%;
         box-shadow: inset 1.195rem -4px 0px 0px var(--clr-accent-night);
     }
 
@@ -31,12 +30,16 @@ For Extra-large size device: 1200px and more */
         transform: translateX(2.45rem);
     }
 
-    /*? Main-tablet */
     main {
-        border: 0.6em solid black;
-        border-radius: 1.75rem;
-        box-shadow: 0 2em 0 black;
+        box-shadow: 1rem 2.75rem 0 var(--clr-night);
+        margin: 2rem;
     }
+
+    body::before {
+        font-size: 4.75rem;
+    }
+
+    /*? Main-tablet */
 
     /*? Left-Tablet */
     .left--content--heading--day {
@@ -61,7 +64,7 @@ For Extra-large size device: 1200px and more */
     }
 
     /*? Right-Tablet */
-    section.right {
+    .right {
         padding: 2.25rem 3.5rem;
     }
 
@@ -70,27 +73,26 @@ For Extra-large size device: 1200px and more */
     }
 }
 
-/** Desktop */
-@media screen and (min-width: 1024px) {
+/*! Desktop */
+@media screen and (min-width: 1024px) {}
 
-    /*? Tablet - Toggle Button (Dark Mode) */
+/*!TODO changeTo Large Screen - 1200px */
+@media screen and (min-width: 1600px) {
+
+    /*? Large Screen - Toggle Button (Dark Mode) */
     .toggle-switch {
         width: 7.5rem;
         top: 1.125rem;
     }
 
     label {
-        width: 100%;
-        /* height: 2.35rem; */
         height: 65%;
     }
 
     .slider::before {
         top: 0.35rem;
-        left: 0.5rem;
         width: 3.55rem;
         height: 3.55rem;
-        border-radius: 50%;
         box-shadow: inset 1.5rem -4px 0px 0px var(--clr-accent-night);
     }
 
@@ -99,19 +101,21 @@ For Extra-large size device: 1200px and more */
     }
 
     main {
+        grid-template-columns: repeat(auto-fit, 1fr);
         grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 3fr;
         grid-template-areas: "left right";
     }
 
-    section.left {
+    .left {
         grid-area: left;
         justify-items: start;
         align-items: center;
+        padding: 5rem;
     }
 
-
-    .left--content--heading {
-        justify-content: space-between;
+    body::before {
+        font-size: 6rem;
     }
 
     .left--content--heading--day,
@@ -133,17 +137,18 @@ For Extra-large size device: 1200px and more */
     }
 
     /*? Right */
-    section.right {
+    .right {
         grid-area: right;
+        padding: 4rem 4rem 4rem 6rem;
     }
 
-    section.right {
-        padding: 3rem 5rem;
-        padding-right: 3.5rem;
-    }
-
-    .right--content {
+    /* list */
+    .list--items {
         font-size: 1.75rem;
+    }
+
+    .list--title {
+        font-size: 3rem;
     }
 
 }

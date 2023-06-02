@@ -2,7 +2,7 @@
 
 //* Selecting elements */
 const leftBG = document.querySelector(`.left`);
-const dayNumber = document.querySelector(`.left--content--heading--day`);
+const dayNumber = document.querySelector(`.day`);
 const leftContent = document.querySelector(`.left--content`);
 const hashTag = document.querySelectorAll(`.hashtag`);
 const codeTime = document.getElementById(`code--time`);

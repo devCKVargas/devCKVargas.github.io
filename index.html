@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/src/css/toggleBtn.css" />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <title>#100DaysOfCode</title>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/src/css/style.css">
+        <link rel="stylesheet" href="/src/css/mediaqueries.css">
+        <title>#100DaysOfCode: 1st</title>
+    </head>
 
-  <body class="body">
-    <main>
-      <!-- //! left -->
-      <section class="left">
-        <div class="left--content">
-          <div class="heading-one">
-            <div class="day colored">0</div>
-            <div class="toggle-switch">
-              <label>
-                <input type="checkbox" id="dark-mode-btn">
-                <span class="slider"></span>
-              </label>
-            </div>
-          </div>
-          <div class="hashtag"><a href="https://twitter.com/hashtag/100DaysOfCode " target="_blank">#100DaysOfCode</a>
-          </div>
-          <!-- <div class="colored">
-            &lt;/&gt;
-          </div> -->
-          <!-- <div class="hashtag"><a href="https://github.com/devCKVargas/devCKVargas.github.io" target="_blank"
-              id="code--time">#MorningCode</a></div> -->
-        </div>
-        <div class="twitter--handle"><a href="https://twitter.com/devCKVargas" target="_blank"
-            class="twitter">@devCKVargas</a></div>
-      </section>
-      <!-- //! right -->
-      <section class="right">
-        <!-- //* JavaScript logo -->
-        <!-- <div class="list--items list--title"><span><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-              class="js--logo" alt="JavaScript logo"></span> Closer Look at Functions
-        </div> -->
-        <section>
-          <ul class="list">
-            <div class="list--title">📖 Today`s discoveries</div>
-            <li class="list--items">Front-end Resources
-              <ul class="list list--nested">
-                <li class="list--items"><span class="colored">app.haikei.app</span></li>
-                <li class="list--items"><span class="colored">shapedivider.app</span></li>
-              </ul>
-            </li>
-            <li class="list--items">Minimum Static Site Setup with <span class="colored">Sass</span></li>
-          </ul>
-        </section>
-        <section>
-          <div class="list--title">👨‍💻 This web page</div>
-          <ul class="list list--dark">
-            <li class="list--items"><span class="colored">To be deployed:</span> CSS mediaquery &amp; HTML</li>
-          </ul>
-        </section>
-      </section>
-    </main>
-    <script src="/src/script/script.js"></script>
-  </body>
+    <body>
+        <!-- header -->
+        <header></header>
+        <!-- main -->
+        <main>
+            <!-- Left section -->
+            <section class="left">
+                <div class="left--content">
+                    <section class="left--content--heading">
+                        <h1 class="left--content--heading--day colored">DAY 24 of</h1>
+                        <div class="toggle-switch">
+                            <label>
+                                <input type="checkbox" id="dark-mode-btn">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </section>
+                    <section class="left--content--links">
+                        <a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer"
+                            class="hashtag">#100DaysOfCode</a>
+                        <p><a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer"
+                                class="twitter-handle">@devCKVargas</a>
+                        </p>
+                    </section>
+                </div>
+            </section>
+            <!-- Right section -->
+            <section class="right">
+                <section class="right--content">
+                    <!-- List starts here -->
+                    <!-- //* JavaScript logo -->
+                    <!-- <div class="list--items list--title"><span><img
+                                src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="js--logo"
+                                alt="JavaScript logo"></span> Closer Look at Functions
+                    </div> -->
+
+                    <section class="first--list">
+                        <ul class="list">
+                            <li class="list--title">📖 Today`s discoveries</li>
+                            <li class="list--items">JavaScript <span class="colored">change image onclick</span></li>
+                            <li class="list--items">Dynamically get viewport height &amp; width using <span
+                                    class="colored">
+                                    resize event
+                                    listener
+                                </span>
+                            </li>
+                            <li class="list--items">Frontend Mentor: News homepage challenge ✅
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="another--list">
+                        <ul class="list">
+                            <li class="list--title">👨‍💻 This web page</li>
+                            <li class="list--items">Migrated: to <span class="colored">new index.html</span> &amp; <span
+                                    class="colored">style.css</span></li>
+                            <li class="list--items"><span class="colored">TODO</span>: Finish up mediaqueries</li>
+                            <li class="list--items"><span class="colored">TODO</span>: Refactor script.js</li>
+                        </ul>
+                    </section>
+                    <section class="another--list">
+                        <ul class="list">
+                            <li class="list--title">📰 News homepage</li>
+                            <li class="list--items"><span class="colored">TODO</span>: add early return to exit the
+                                function if conditions aren't met
+                                to help improve the performance
+                                by avoiding
+                                unnecessary code execution.</li>
+                            <li class="list--items"><span class="colored">TODO</span>: Remove ununsed codes</li>
+                        </ul>
+                    </section>
+                </section>
+            </section>
+        </main>
+        <!-- footer -->
+        <footer></footer>
+        <script src="/src/script/script.js"></script>
+    </body>
 
 </html>

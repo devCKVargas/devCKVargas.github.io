@@ -1,179 +1,243 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-/*! Variables */
+/*? Global Variables */
 :root {
-	--clr-main-bg: hsla(0, 0%, 100%, 0.5);
-	--clr-bg-day-left: hsla(0, 0%, 100%, 0.4);
-	--clr-day: hsl(0, 0%, 82%);
-	--clr-night: hsla(0, 0%, 0.1%, 0.9);
+	--clr-bg-main: hsla(0, 0%, 100%, 0.5);
 	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.9);
+	--clr-bg-day-left: hsla(0, 0%, 100%, 0.4);
+	--clr-night: hsla(0, 0%, 0.1%, 0.875);
 	--clr-accent-day: hsl(343, 57%, 50%);
 	--clr-accent-night: hsl(17, 64%, 53%);
+	--clr-links-day: hsl(0, 0%, 20%);
+	--clr-links-night: hsl(251, 39%, 51%);
+	--clr-bg-toggle-btn: hsl(220, 50%, 90%);
+	--clr-bg-toggle-btn-night: hsl(225, 5%, 16%);
+	--clr-day: hsl(0, 0%, 82%);
+	--clr-bg-night-right: hsla(0, 0%, 2.3%, 0.875);
 	--clr-bg-day: linear-gradient(to top left, #64abfc 0%, #345df9 100%);
 	--clr-bg-night: linear-gradient(to top left, #9b4679 0%, #213dae 100%);
-	--clr-twitter-day: hsl(0, 0%, 20%);
 	--clr-bg-twitter-day: hsla(0, 0%, 100%, 0.3);
-	--clr-bg-twitter-night: hsla(0, 0%, 0.5%, 0.9);
+	--clr-bg-twitter-night: hsla(0, 0%, 0.5%, 0.6);
 	--trans-speed-default: all 0.75s;
-	--trans-speed-btn: 0.4s;
-	/* color: #d3303d; */
-	/* color: #7a64df; */
+}
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*! scroll bar */
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+	width: 1rem;
+	border-radius: 5rem;
+	background-clip: padding-box;
+	border: 4px solid transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 0 1rem var(--clr-bg-night-right);
 }
 
 html {
-	box-sizing: border-box;
+	height: -webkit-fill-available;
+	font: bold 1rem "Nunito";
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
+
+body {
+	background: var(--clr-bg-day);
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	height: 100svh;
+	/* height: -webkit-fill-available; */
+}
+
+body::before {
+	content: ">_";
+	transition: var(--trans-speed-default);
+	position: absolute;
+	font-size: 3rem;
+	bottom: 0.5rem;
+	right: 3rem;
+	color: var(--clr-accent-day);
+
+
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: top/cover url(../assets/cloud.jpg);
+	z-index: -1;
+	opacity: 0.3;
 }
 
 a {
 	text-decoration: none;
-	color: var(--clr-haha);
 }
 
-body {
-	font-family: "Nunito", sans-serif;
-	font-weight: 400;
-	height: 100vh;
-	background: var(--clr-bg-day);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.hidden {
+	display: none;
 }
 
-.body::before {
-	content: ">_";
-	position: fixed;
-	font-size: 8rem;
-	bottom: 0.5%;
-	right: 2%;
-	color: var(--clr-accent-day);
-}
-
-.body::after {
-	content: "";
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	background: no-repeat center/cover url("../assets/cloud.jpg");
-	opacity: 0.3;
-}
-
-.body--dark::before {
-	color: var(--clr-accent-night);
-}
-
-.body--dark {
-	background: var(--clr-bg-night);
-}
-
-/*! LAYOUT */
+/*? LAYOUT */
 main {
 	position: relative;
-	width: 100rem;
-	height: auto;
-	background-color: var(--clr-main-bg);
-	box-shadow: 0 2.75rem 0 black;
-	border-radius: 2rem;
-	border: 0.75rem solid black;
+	background: var(--clr-bg-main);
+	border-radius: 1rem;
+	max-width: 1600px;
+	max-height: 900px;
+	display: grid;
 	overflow: hidden;
-	display: flex;
 }
 
-/*! Left */
+/* ? Left */
 .left {
-	flex: 50%;
-	padding: 5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
 	transition: var(--trans-speed-default);
-	gap: 1rem;
 	background-color: var(--clr-bg-day-left);
+	padding: 3rem;
+	/* border-radius: 1rem 1rem 0 0; */
+	display: grid;
+	place-items: center;
+	position: relative;
 }
 
 .left--content {
-	position: relative;
-	font-size: 4.75rem;
-	font-weight: 700;
-	margin-bottom: 1rem;
-}
-
-.heading-one {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas: "day day toggleBtn";
 }
 
-.day {
-	grid-area: day;
+.left--content--heading {
+	display: flex;
+	gap: min(2.5rem, 3.5vw);
 }
 
-.toggle-switch {
-	grid-area: toggleBtn;
-	top: 15%;
+.left--content--heading--day {
+	font-size: 1.35em;
 }
 
 .hashtag {
-	color: var(--clr-night);
-}
-
-.twitter--handle {
-	position: relative;
-	color: var(--clr-twitter-day);
-	background: none;
-	border: none;
-	font-family: inherit;
-	font-size: 1.5rem;
-	font-weight: bolder;
 	transition: var(--trans-speed-default);
-	padding: 0.7rem 2.5rem;
-	border-radius: 50rem;
-	background-color: var(--clr-bg-twitter-day);
+	color: var(--clr-links-day);
+	font-size: 1.1125em;
 }
 
-/*! Right */
-span .js--logo {
-	width: 2rem;
-	height: auto;
-	position: relative;
-}
-
-.right {
-	flex: 50%;
-	padding: 5rem;
-	padding-left: 8rem;
+.left--content--links {
 	display: grid;
-	gap: 1.5rem;
+	gap: 0.4rem;
+}
+
+.twitter-handle {
 	transition: var(--trans-speed-default);
+	color: var(--clr-links-day);
+	border-radius: 5rem;
+	padding: 0.125rem 0.75rem;
+	background-color: var(--clr-bg-twitter-day);
+	font-size: 0.9125em;
+}
+
+/*? Toggle Button (Dark Mode) */
+.toggle-switch {
+	position: relative;
+	width: 4.25rem;
+}
+
+label {
+	position: absolute;
+	width: 80%;
+	/* height: 2.35rem; */
+	height: 100%;
+	background-color: var(--clr-bg-toggle-btn-night);
+	border-radius: 5rem;
+	cursor: pointer;
+}
+
+input {
+	position: absolute;
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	transition: 0.3s;
+}
+
+input:checked~.slider {
+	background-color: var(--clr-bg-toggle-btn);
+}
+
+.slider::before {
+	content: "";
+	position: absolute;
+	top: 0.2rem;
+	left: 0.3rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	box-shadow: inset 0.65rem -4px 0px 0px var(--clr-accent-night);
+	background-color: var(--dark);
+	transition: 0.3s;
+}
+
+input:checked~.slider::before {
+	transform: translateX(1.35rem);
+	background-color: var(--clr-accent-day);
+	box-shadow: none;
+}
+
+/*? Right */
+.right {
+	transition: var(--trans-speed-default);
+	padding: 1.75rem 2.5rem;
+	overflow-y: scroll;
+}
+
+.right--content {
+	font-size: 1.125rem;
+}
+
+.colored {
+	transition: var(--trans-speed-default);
+	color: var(--clr-accent-day);
+}
+
+/* list */
+.list {
+	display: grid;
+	gap: 0.125rem;
 }
 
 .list--items {
-	font-size: 1.75rem;
+	transition: var(--trans-speed-default);
 	font-weight: bold;
 	color: var(--clr-night);
-	margin-bottom: 0.125rem;
-	transition: var(--trans-speed-default);
 	word-spacing: 0.5px;
 }
 
 .list--items::marker {
+	transition: var(--trans-speed-default);
 	color: var(--clr-accent-day);
 }
 
 .list--title {
-	font-size: 3rem;
-	font-weight: bold;
-	margin-bottom: 1rem;
-	list-style: none;
-	color: var(--clr-accent-day);
 	transition: var(--trans-speed-default);
+	color: var(--clr-accent-day);
+	list-style: none;
+	margin-bottom: 0.5rem;
+}
+
+.another--list .list--title {
+	margin-top: 1.5rem;
 }
 
 .list--nested {
@@ -182,40 +246,41 @@ span .js--logo {
 }
 
 .list--nested .list--items::before {
+	transition: var(--trans-speed-default);
 	content: "➥ ";
 	/* padding-left: 3rem; */
 	color: var(--clr-accent-day);
 }
 
-.colored {
-	transition: var(--trans-speed-default);
-	color: var(--clr-accent-day);
-}
 
-.hidden {
-	display: none;
-}
-
-/*? === DARK MODE STARTS HERE === */
+/*? Dark Mode */
 .body--dark {
 	background: var(--clr-bg-night);
+}
+
+.body--dark::after {
+	color: var(--clr-accent-night);
+}
+
+.hashtag--dark {
+	color: var(--clr-links-night);
+}
+
+.twitter-handle--dark {
+	color: var(--clr-day);
+	background-color: var(--clr-bg-twitter-night);
+}
+
+.colored--dark {
+	color: var(--clr-accent-night);
 }
 
 .left--dark {
 	background-color: var(--clr-night);
 }
 
-.hashtag--dark {
-	color: #6250b3;
-}
-
-.twitter--handle--dark {
-	background-color: var(--clr-bg-twitter-night);
-	color: var(--clr-day);
-}
-
 .right--dark {
-	background-color: var(--clr-bg-night-right);
+	background-color: var(--clr-bg-night-right)
 }
 
 .list--items--dark {
@@ -232,9 +297,5 @@ span .js--logo {
 
 .list--nested .list--items--dark::before {
 	content: "➥ ";
-	color: var(--clr-accent-night);
-}
-
-.colored--dark {
 	color: var(--clr-accent-night);
 }
