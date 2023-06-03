@@ -258,7 +258,7 @@ input:checked~.slider::before {
 	background: var(--clr-bg-night);
 }
 
-.body--dark::after {
+.body--dark::before {
 	color: var(--clr-accent-night);
 }
 
