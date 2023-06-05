@@ -151,7 +151,7 @@ main {
 
 label {
 	position: absolute;
-	width: 80%;
+	width: 75%;
 	/* height: 2.35rem; */
 	height: 100%;
 	background-color: var(--clr-bg-toggle-btn-night);
@@ -180,7 +180,7 @@ input:checked~.slider {
 	content: "";
 	position: absolute;
 	top: 0.2rem;
-	left: 0.3rem;
+	left: 0.4rem;
 	width: 1.5rem;
 	height: 1.5rem;
 	border-radius: 50%;
@@ -190,7 +190,7 @@ input:checked~.slider {
 }
 
 input:checked~.slider::before {
-	transform: translateX(1.35rem);
+	transform: translateX(1rem);
 	background-color: var(--clr-accent-day);
 	box-shadow: none;
 }
