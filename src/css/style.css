@@ -211,6 +211,11 @@ input:checked~.slider::before {
 	color: var(--clr-accent-day);
 }
 
+.logo {
+	height: 2.5rem;
+	margin-right: 1rem;
+}
+
 /* list */
 .list {
 	display: grid;
@@ -233,7 +238,11 @@ input:checked~.slider::before {
 	transition: var(--trans-speed-default);
 	color: var(--clr-accent-day);
 	list-style: none;
-	margin-bottom: 0.5rem;
+	margin-bottom: .75rem;
+}
+
+.list--items.list--title {
+	color: var(--clr-links-night);
 }
 
 .another--list .list--title {
