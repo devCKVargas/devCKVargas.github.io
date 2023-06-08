@@ -6,156 +6,155 @@ For Desktop or large-size screen: 1024px -1200px
 For Extra-large size device: 1200px and more */
 /** Tablet */
 @media screen and (min-width: 480px) {
+	/*? Tablet - Toggle Button (Dark Mode) */
+	.toggle-switch {
+		top: 0.5rem;
+		width: 5.7rem;
+	}
 
-    /*? Tablet - Toggle Button (Dark Mode) */
-    .toggle-switch {
-        top: 0.5rem;
-        width: 5.7rem;
-    }
+	label {
+		width: 100%;
+		/* height: 2.35rem; */
+		height: 80%;
+	}
 
-    label {
-        width: 100%;
-        /* height: 2.35rem; */
-        height: 80%;
-    }
+	.slider::before {
+		top: 0.325rem;
+		left: 0.55rem;
+		width: 3rem;
+		height: 3rem;
+		box-shadow: inset 1.195rem -4px 0px 0px var(--clr-accent-night);
+	}
 
-    .slider::before {
-        top: 0.325rem;
-        left: 0.55rem;
-        width: 3rem;
-        height: 3rem;
-        box-shadow: inset 1.195rem -4px 0px 0px var(--clr-accent-night);
-    }
+	input:checked ~ .slider::before {
+		transform: translateX(1.75rem);
+	}
 
-    input:checked~.slider::before {
-        transform: translateX(1.75rem);
-    }
+	main {
+		box-shadow: 1rem 2.75rem 0 var(--clr-night);
+		margin: 2rem;
+	}
 
-    main {
-        box-shadow: 1rem 2.75rem 0 var(--clr-night);
-        margin: 2rem;
-    }
+	body::before {
+		font-size: 4.75rem;
+	}
 
-    body::before {
-        font-size: 4.75rem;
-    }
+	/*? Main-tablet */
 
-    /*? Main-tablet */
+	/*? Left-Tablet */
 
-    /*? Left-Tablet */
-    .left--content--heading {
-        /* justify-content: flex-start; */
-    }
+	.left--content--heading--day {
+		font-size: 3.35em;
+	}
 
-    .left--content--heading--day {
-        font-size: 3.35em;
-    }
+	.hashtag {
+		font-size: 2.75em;
+	}
 
-    .hashtag {
-        font-size: 2.75em;
-    }
+	.left--content--links {
+		gap: 1rem;
+	}
 
-    .left--content--links {
-        gap: 1rem;
-    }
+	p {
+		margin: 0 auto;
+	}
 
-    p {
-        margin: 0 auto;
-    }
+	.twitter-handle {
+		font-size: 1.5em;
+		padding: 0.5rem 1.5rem;
+	}
 
-    .twitter-handle {
-        font-size: 1.5em;
-        padding: 0.5rem 1.5rem;
-    }
+	/*? Right-Tablet */
+	.right {
+		padding: 2.25rem 2rem 2.25rem 4rem;
+	}
 
-    /*? Right-Tablet */
-    .right {
-        padding: 2.25rem 3.5rem;
-    }
-
-    .right--content {
-        font-size: 1.5rem;
-    }
+	.right--content {
+		font-size: 1.5rem;
+	}
 }
 
 /*! Desktop */
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+}
 
 /*!TODO make Large Screen - 1200px */
 
 /*! XL */
 @media screen and (min-width: 1600px) {
+	/*? Large Screen - Toggle Button (Dark Mode) */
+	.toggle-switch {
+		width: 7.5rem;
+		top: 1.125rem;
+	}
 
-    /*? Large Screen - Toggle Button (Dark Mode) */
-    .toggle-switch {
-        width: 7.5rem;
-        top: 1.125rem;
-    }
+	label {
+		height: 65%;
+	}
 
-    label {
-        height: 65%;
-    }
+	.slider::before {
+		top: 0.35rem;
+		width: 3.55rem;
+		height: 3.55rem;
+		box-shadow: inset 1.5rem -4px 0px 0px var(--clr-accent-night);
+	}
 
-    .slider::before {
-        top: 0.35rem;
-        width: 3.55rem;
-        height: 3.55rem;
-        box-shadow: inset 1.5rem -4px 0px 0px var(--clr-accent-night);
-    }
+	input:checked ~ .slider::before {
+		transform: translateX(3rem);
+	}
 
-    input:checked~.slider::before {
-        transform: translateX(3rem);
-    }
+	main {
+		grid-template-columns: repeat(auto-fit, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas: "left right";
+	}
 
-    main {
-        grid-template-columns: repeat(auto-fit, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas: "left right";
-    }
+	.left {
+		grid-area: left;
+		justify-items: start;
+		align-items: center;
+		padding: 5rem;
+	}
 
-    .left {
-        grid-area: left;
-        justify-items: start;
-        align-items: center;
-        padding: 5rem;
-    }
+	body::before {
+		font-size: 6rem;
+	}
 
-    body::before {
-        font-size: 6rem;
-    }
+	.left--content {
+		place-items: start;
+	}
 
-    .left--content--heading--day,
-    .hashtag {
-        font-size: 4.75rem;
-    }
+	.left--content--heading--day,
+	.hashtag {
+		font-size: 4.75rem;
+	}
 
-    .left--content--links {
-        gap: 3rem;
-    }
+	.left--content--links {
+		gap: 3rem;
+	}
 
-    p {
-        margin: initial;
-    }
+	p {
+		margin: initial;
+	}
 
-    .twitter-handle {
-        font-size: 1.5rem;
-        padding: 0.7rem 2.5rem;
-    }
+	.twitter-handle {
+		font-size: 1.5rem;
+		padding: 0.7rem 2.5rem;
+	}
 
-    /*? Right */
-    .right {
-        grid-area: right;
-        padding: 4rem 4rem 4rem 6rem;
-    }
+	/*? Right */
+	.right {
+		grid-area: right;
+		padding: 4rem 3rem 4rem 6rem;
+	}
 
-    /* list */
-    .list--items {
-        font-size: 1.75rem;
-    }
+	/* list */
+	.list--items {
+		font-size: 1.75rem;
+	}
 
-    .list--title {
-        font-size: 3rem;
-    }
-
+	.list--title {
+		font-size: 3rem;
+	}
 }
