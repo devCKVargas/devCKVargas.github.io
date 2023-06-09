@@ -225,6 +225,11 @@ input:checked ~ .slider::before {
 	word-spacing: 0.5px;
 }
 
+.list__link {
+	text-decoration: underline;
+	color: var(--clr-links-night);
+}
+
 .list--items::marker {
 	transition: var(--trans-speed-default);
 	color: var(--clr-accent-day);
