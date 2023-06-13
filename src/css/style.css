@@ -258,8 +258,14 @@ input:checked ~ .slider::before {
 .list--nested .list--items::before {
 	transition: var(--trans-speed-default);
 	content: "➥ ";
-	/* padding-left: 3rem; */
 	color: var(--clr-accent-day);
+}
+
+.span--items::before{
+	transition: var(--trans-speed-default);
+	content: "➥ ";
+	padding-left: 2rem;
+	color: var(--clr-accent-night);
 }
 
 /*? Dark Mode */
