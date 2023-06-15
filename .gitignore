@@ -1,10 +1,9 @@
-# Ignore
+# Folders
 .gitignore
 node_modules/
 public/
 
-# all .json files
-*.json 
+# .json files
+package-lock.json
 
 # Exclude
-!package.json
