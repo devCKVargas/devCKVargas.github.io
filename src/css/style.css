@@ -255,13 +255,21 @@ input:checked ~ .slider::before {
 	list-style: none;
 }
 
-.list--nested .list--items::before {
+.list--nested .list--items {
+	transition: var(--trans-speed-default);
+	font-size: 0.75em;
+	background-color: var(--clr-bg-twitter-day);
+	padding: 0.25rem 1rem;
+	border-radius: 3px;
+}
+
+/* .list--nested .list--items::before {
 	transition: var(--trans-speed-default);
 	content: "➥ ";
 	color: var(--clr-accent-day);
-}
+} */
 
-.span--items::before{
+.span--items::before {
 	transition: var(--trans-speed-default);
 	content: "➥ ";
 	padding-left: 2rem;
@@ -310,7 +318,11 @@ input:checked ~ .slider::before {
 	color: var(--clr-accent-night);
 }
 
-.list--nested .list--items--dark::before {
+.list--nested .list--items--dark {
+	background-color: var(--clr-bg-twitter-night);
+}
+
+/* .list--nested .list--items--dark::before {
 	content: "➥ ";
 	color: var(--clr-accent-night);
-}
+} */
