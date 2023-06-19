@@ -20,7 +20,7 @@ const dayCounter = () => {
 	const dateComplete = new Date(2023, 07, 14).getTime() / (1000 * 3600 * 24);
 	const remainingDays = dateComplete - dateNow;
 	const spentDays = Math.ceil(100 - remainingDays);
-	let rest = 4; //TODO add rest day */
+	let rest = 7; //TODO add rest day */
 	dayNumber.innerText = `DAY ${spentDays - rest} of`;
 };
 dayCounter();
@@ -59,9 +59,7 @@ const darkMode = () => {
 const autoMode = () => {
 	const timeOfDay = new Date().getHours();
 	//? Turn on dark mode at 1PM (13:00), & turn off dark mode toggle button
-	timeOfDay >= 13
-		? (darkMode(), (darkModeBtn.checked = false))
-		: (darkModeBtn.checked = true);
+	timeOfDay >= 13 ? (darkMode(), (darkModeBtn.checked = false)) : (darkModeBtn.checked = true);
 };
 autoMode();
 
