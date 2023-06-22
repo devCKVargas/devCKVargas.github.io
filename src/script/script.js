@@ -15,9 +15,9 @@ const darkModeBtn = document.querySelector(`#dark-mode-btn`); //* checkbox
 
 //? Added day counter on: 05/23/2023 && Fixed on: 05/24/2023
 const dayCounter = () => {
-	const dateStart = new Date(2023, 04, 06).getTime() / (1000 * 3600 * 24);
+	const dateStart = new Date(2023, 4, 6).getTime() / (1000 * 3600 * 24); // May 6, 2023
 	const dateNow = new Date().getTime() / (1000 * 3600 * 24);
-	const dateComplete = new Date(2023, 07, 14).getTime() / (1000 * 3600 * 24);
+	const dateComplete = new Date(2023, 7, 14).getTime() / (1000 * 3600 * 24); // August 14, 2023
 	const remainingDays = dateComplete - dateNow;
 	const spentDays = Math.ceil(100 - remainingDays);
 	let rest = 7; //TODO add rest day */

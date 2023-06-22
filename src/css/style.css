@@ -251,16 +251,20 @@ input:checked ~ .slider::before {
 }
 
 .list--nested {
-	padding-left: 0.125rem;
 	list-style: none;
+	padding-left: 0.125rem;
 }
 
 .list--nested .list--items {
 	transition: var(--trans-speed-default);
 	font-size: 0.75em;
 	background-color: var(--clr-bg-twitter-day);
-	padding: 0.25rem 1rem;
+	padding: 0.35rem 1rem;
 	border-radius: 3px;
+}
+
+.list--nested .list--items:first-of-type {
+	margin-top: 0.25rem;
 }
 
 /* .list--nested .list--items::before {
