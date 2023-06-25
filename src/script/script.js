@@ -20,7 +20,7 @@ const dayCounter = () => {
 	const dateComplete = new Date(2023, 7, 14).getTime() / (1000 * 3600 * 24); // August 14, 2023
 	const remainingDays = dateComplete - dateNow;
 	const spentDays = Math.ceil(100 - remainingDays);
-	let rest = 7; //TODO add rest day */
+	let rest = 8; //TODO add rest day */
 	dayNumber.innerText = `DAY ${spentDays - rest} of`;
 };
 dayCounter();
