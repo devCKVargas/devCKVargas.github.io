@@ -57,12 +57,14 @@ body {
 }
 
 body::before {
-	content: ">_";
+	content: "</>";
+	font-family: sans-serif;
 	transition: var(--trans-speed-default);
 	position: absolute;
-	font-size: 3rem;
 	bottom: 0.5rem;
 	right: 3rem;
+	font-size: 3rem;
+	font-weight: 400;
 	color: var(--clr-accent-day);
 }
 
