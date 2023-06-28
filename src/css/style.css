@@ -73,7 +73,7 @@ body::after {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background: top/cover url(../assets/cloud.jpg);
+	background: top/cover url(../assets/img/cloud.jpg);
 	z-index: -1;
 	opacity: 0.3;
 }
