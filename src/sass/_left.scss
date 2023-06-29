@@ -1,0 +1,58 @@
+.days {
+	background-color: rgba($clr-white, 0.3);
+	padding: 2.5rem 3rem;
+	color: $clr-left-text;
+
+	&--dark {}
+
+	&__spent {
+		// font-size: 3.6rem;
+		font-size: clamp(2.8rem, 9vw, 7.6rem);
+		color: $clr-primary;
+
+		&--dark {
+			color: $clr-primary--dark;
+		}
+	}
+
+	&__hashtag {
+		// font-size: 2.6rem;
+		font-size: clamp(2.4rem, 8vw, 7.6rem);
+
+		&--dark {
+			color: $clr-link;
+		}
+	}
+
+	&__twitter-handle {
+		// font-size: 1.6rem;
+		font-size: clamp(1.4rem, 4.5vw, 2.4rem);
+		padding: .5rem 1.5rem;
+		border-radius: 100rem;
+		background-color: rgba($clr-white, .25);
+
+		&--dark {
+			background-color: rgba($clr-black, .25);
+		}
+	}
+
+	&__hashtag,
+	&__twitter-handle {
+		text-decoration: none;
+		display: inline-block;
+		color: inherit;
+	}
+}
+
+.btn {
+	display: block;
+	display: none;
+	cursor: pointer;
+
+	&--color-scheme {
+		// border: none;
+		background-color: palevioletred;
+
+		&--dark {}
+	}
+}

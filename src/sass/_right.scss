@@ -1,0 +1,31 @@
+.list {
+	// background-color: rgba($clr-white, 0.25);
+	padding: 3rem 2rem 4rem 5rem;
+	padding: 3rem 2rem 4rem 2rem;
+	font-size: clamp(1.8rem, 5vw, 2.8rem);
+
+
+
+	&__box {}
+
+	&__item {
+		// list-style: none;
+		list-style-position: inside;
+
+		//Todo: manually adjust li::marker spacing
+		// &::marker {
+		// 	margin-left: 0 !important;
+		// 	margin-right: 0 !important;
+		// }
+	}
+
+	&__item--title {
+		font-size: clamp(2.2rem, 5vw, 4.8rem);
+		list-style: none;
+		color: $clr-primary;
+
+		&--dark {
+			color: $clr-primary--dark;
+		}
+	}
+}
