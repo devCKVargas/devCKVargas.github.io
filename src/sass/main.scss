@@ -1,6 +1,12 @@
 @import "mixin";
 @import "base";
 @import "typography";
+@import "utilities";
+@import "layout";
 
-@import "left";
-@import "right";
+//@ pages
+@import "days";
+@import "list";
+
+//@ components
+@import "link-info"

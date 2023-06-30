@@ -24,7 +24,7 @@
 		<link rel="stylesheet" href="css/main.css" />
 
 		<!--@ js -->
-		<!-- <script defer src="js/script.js"></script> -->
+		<script defer src="js/script.js"></script>
 
 		<!--@ title -->
 		<title>Daily Twitter Post</title>
@@ -32,29 +32,58 @@
 
 	<body class="body ...body--dark">
 		<div class="container">
-			<aside class="days">
-				<h1 class="days__spent">Round 1: Day <span id="spent-day">100</span></h1>
+			<main class="days">
+				<h1 class="days__spent heading">R<span id="current-round">9</span>: Day <span id="current-day">100</span></h1>
 				<button type="button" class="btn btn--color-scheme">light-on-dark</button>
-				<a href="https://twitter.com/hashtag/100DaysOfCode" class="days__hashtag">#100DaysOfCode</a>
-				<a href="https://twitter.com/devCKVargas" target="_blank" class="days__twitter-handle">@devCKVargas</a>
-			</aside>
-			<main class="list">
-				<ul class="list__box">
-					<li class="list__item list__item--title">📖 Today</li>
-					<li class="list__item">mixin: add mising</li>
-					<li class="list__item">HTML, ipsum dolor.</li>
-					<li class="list__item">CSS, ipsum dolor.</li>
-					<li class="list__item">Javascript, ipsum dolor.</li>
-				</ul>
-				<ul class="list__box">
-					<li class="list__item list__item--title">👨‍💻 This site</li>
-					<li class="list__item">mixin: add mising Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis unde dolorum minima quasi architecto</li>
-					<li class="list__item">mixin: add mising</li>
-					<li class="list__item">HTML, ipsum dolor.</li>
-					<li class="list__item">CSS, ipsum dolor.</li>
-					<li class="list__item">Javascript, ipsum dolor.</li>
-				</ul>
+				<h2 class="days__hashtag heading"><a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer" class="days__hashtag--link">#100DaysOfCode</a>
+					<!-- <span class="link-info">Opens in a new tab</span> -->
+				</h2>
+				<h3 class="days__twitter">
+					<a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer" class="days__twitter-handle">@devCKVargas</a>
+					<!-- <span class="link-info">Opens in a new tab</span> -->
+				</h3>
 			</main>
+			<aside class="list">
+				<div class="list__first">
+					<h2 class="list__title heading">📖 Today</h2>
+					<ul class="list__box">
+						<li class="list__item">
+							<h3>mixin: add mising</h3>
+							<h3><a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer">test Lorem, ipsum.</a></h3>
+						</li>
+						<li class="list__item">
+							<h3>HTML, ipsum dolor.</h3>
+						</li>
+						<li class="list__item">
+							<h3>CSS, ipsum dolor.</h3>
+						</li>
+						<li class="list__item">
+							<h3>Javascript, ipsum dolor.</h3>
+						</li>
+					</ul>
+				</div>
+				<div class="list__second">
+					<h2 class="list__title heading">👨‍💻 This site</h2>
+					<ul class="list__box">
+						<li class="list__item">
+							<h3>mixin: add mising Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis unde dolorum minima quasi architecto</h3>
+							<h4>Lorem ipsum dolor sit amet.</h4>
+						</li>
+						<li class="list__item">
+							<h3>mixin: add mising</h3>
+						</li>
+						<li class="list__item">
+							<h3>HTML, ipsum dolor.</h3>
+						</li>
+						<li class="list__item">
+							<h3>CSS, ipsum dolor.</h3>
+						</li>
+						<li class="list__item">
+							<h3>Javascript, ipsum dolor.</h3>
+						</li>
+					</ul>
+				</div>
+			</aside>
 		</div>
 	</body>
 

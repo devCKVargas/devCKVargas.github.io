@@ -1,0 +1,23 @@
+.link-info {
+	display: inline-block;
+	position: absolute;
+	width: max-content;
+	padding: .5rem 1rem;
+	font-size: clamp(1rem, 2vw, 1.6rem);
+	color: $clr-white;
+	top: 100%;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	transition: background-color .2s ease-in;
+
+	//$ test
+	// background-color: salmon;
+}
+
+a:hover+.link-info,
+a:focus+.link-info {
+	visibility: visible;
+	background-color: $clr-primary;
+	border: 1px solid $clr-white;
+}

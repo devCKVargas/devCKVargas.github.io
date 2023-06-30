@@ -36,6 +36,9 @@ $mobile: 600em;
 $tablet: 768em;
 $desktop: 1024em;
 
+$left-height: 20vh;
+$right-height: 80vh;
+
 // reset
 *,
 *::before,
@@ -52,36 +55,61 @@ h3 {
 }
 
 //! html
-::selection {
-	background-color: $clr-primary;
-	color: $clr-white;
-}
-
 html {
 	font: 700 62.5% $ff-main;
 	// font-size: 62.5%; //$ 10px
+	color-scheme: light;
 }
 
 .body {
-	height: 100vh;
-	// height: 100svh;
+	min-height: 100vh;
+	// min-height: -webkit-fill-available;
+
+	@supports(min-height: 100svh) {
+		// min-height: 100svh //$ enable post build
+	}
+
 	background-image: $clr-bg,
-		url(../assets/img/cloud.jpg);
+	url(../assets/img/cloud.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	color: $clr-text;
 
+	&::after {
+		content: "</>";
+		font-family: sans-serif;
+		font-size: clamp(4rem, 10vw, 7.2rem);
+		color: $clr-primary;
+		position: fixed;
+		position: absolute;
+		z-index: -1;
+		right: 3rem;
+		bottom: 2rem;
+	}
+
+	:focus {
+		outline: thick solid $clr-primary;
+	}
+
+	::selection {
+		background-color: $clr-primary;
+		color: $clr-white;
+	}
+
 	&--dark {
+		::selection {
+			background-color: $clr-primary--dark;
+			color: $clr-white;
+		}
+
 		background-image: $clr-bg--dark,
-			url(../assets/img/cloud.jpg);
+		url(../assets/img/cloud.jpg);
 	}
 }
 
 .container {
-	background-color: rgba($clr-white, 0.4);
-	// background-color: rgba($clr-white, 0.5);
-	// padding: 2.5rem 3rem;
-	// border-radius: 1rem;
-
-	display: grid;
+	border-radius: 16px;
+	overflow: hidden;
+	background-color: rgba($clr-white, .5);
 }

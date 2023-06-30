@@ -1,0 +1,35 @@
+.list {
+	// background-color: rgba($clr-white, 0.35);
+	padding: 3rem 2rem 4rem 2rem;
+	padding: 3rem 2rem;
+	font-size: clamp(1.8rem, 5vw, 2.8rem);
+	// min-height: $right-height;
+
+	display: grid;
+	row-gap: 2rem;
+
+
+	& * {
+		font-size: inherit;
+	}
+
+	&__title {
+		font-size: clamp(2.4rem, 7vw, 4.8rem);
+	}
+
+	&__box {
+		list-style: none;
+	}
+
+	&__item>* {
+
+		&::before {
+			content: "•";
+			display: inline-block;
+			color: $clr-primary;
+			margin-right: 1.5rem;
+
+		}
+	}
+
+}

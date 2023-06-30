@@ -1,0 +1,15 @@
+.body {
+	display: grid;
+	place-content: center;
+}
+
+@include media(600em) {
+	.container {
+		margin: 2rem;
+	}
+}
+
+.days {
+	display: grid;
+	place-content: center;
+}
