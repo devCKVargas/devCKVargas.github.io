@@ -22,14 +22,14 @@ $light-cyan: hsla(182, 82%, 93%, 1);
 $burnt-sienna: hsla(12, 83%, 62%, 1);
 $gunmetal: hsla(218, 23%, 21%, 1);
 
-$bg-alpha: .5;
-$bg-alpha--dark: .8;
+$bg-alpha: .75;
 $clr-bg: linear-gradient(to top left, rgba(#64abfc, $bg-alpha) 0%, rgba(#345df9, $bg-alpha) 100%);
-$clr-bg--dark: linear-gradient(to top left, rgba(#9b4679, $bg-alpha--dark) 0%, rgba(#213dae, $bg-alpha--dark) 100%);
+$clr-bg--dark: linear-gradient(to top left, rgba(#9b4679, $bg-alpha) 0%, rgba(#213dae, $bg-alpha) 100%);
 
 // font
 $ff-main: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
 	'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$ff-emoji: "Noto Color Emoji";
 
 // font breakpoint
 $mobile: 600em;
@@ -56,21 +56,27 @@ h3 {
 
 //! html
 html {
-	font: 700 62.5% $ff-main;
-	// font-size: 62.5%; //$ 10px
+	font-family: $ff-emoji;
+	font: 700 62.5%/normal $ff-main; //$ 10px
 	color-scheme: light;
+	min-height: 100vh;
+	min-height: -moz-available;
+	min-height: -webkit-fill-available;
+	min-height: fill-available;
+}
+
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+
+	@supports(min-height: 100svh) {
+		min-height: 100svh;
+	}
 }
 
 .body {
-	min-height: 100vh;
-	// min-height: -webkit-fill-available;
-
-	@supports(min-height: 100svh) {
-		// min-height: 100svh //$ enable post build
-	}
-
 	background-image: $clr-bg,
-	url(../assets/img/cloud.jpg);
+		url(../assets/img/cloud.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -82,7 +88,6 @@ html {
 		font-size: clamp(4rem, 10vw, 7.2rem);
 		color: $clr-primary;
 		position: fixed;
-		position: absolute;
 		z-index: -1;
 		right: 3rem;
 		bottom: 2rem;
@@ -109,7 +114,5 @@ html {
 }
 
 .container {
-	border-radius: 16px;
-	overflow: hidden;
 	background-color: rgba($clr-white, .5);
 }

@@ -1,15 +1,51 @@
 .body {
 	display: grid;
 	place-content: center;
+
+	::-webkit-scrollbar {
+		width: 15px;
+		height: 15px;
+
+		&-thumb {
+			background-color: $clr-primary;
+			border-radius: 100rem;
+
+			&:hover {
+				background-color: hsl(343, 60%, 40%)
+			}
+
+			&:active {
+				background-color: hsl(343, 60%, 53%)
+			}
+		}
+	}
+
+	scrollbar-color: $clr-primary rgba($clr-white, .75);
 }
 
-@include media(600em) {
-	.container {
+.container {
+	max-width: 160rem;
+	max-height: 90rem;
+	border-radius: 16px;
+
+	display: grid;
+	overflow: hidden;
+	// grid-template-columns: repeat(auto-fit, minmax(48.45rem, 1fr));
+	box-shadow: 1.5rem 1.5rem 0 rgba($clr-black, .85);
+
+	@include media(340em) {
 		margin: 2rem;
+	}
+
+	@include media(600em) {}
+
+	@include media(1024em) {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-.days {
+
+.first-section {
 	display: grid;
 	place-content: center;
 }

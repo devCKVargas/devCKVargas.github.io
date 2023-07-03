@@ -11,7 +11,7 @@
 		<!--@ font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 
 		<!--@ favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -27,63 +27,45 @@
 		<script defer src="js/script.js"></script>
 
 		<!--@ title -->
-		<title>Daily Twitter Post</title>
+		<title>CK - R1 #100DaysOfCode</title>
 	</head>
 
-	<body class="body ...body--dark">
+	<body class="body -body--dark">
 		<div class="container">
-			<main class="days">
-				<h1 class="days__spent heading">R<span id="current-round">9</span>: Day <span id="current-day">100</span></h1>
+			<section class="first-section">
+				<h1 class="first-section__spent heading">R<span id="current-round">9</span>: Day <span id="current-day">100</span></h1>
 				<button type="button" class="btn btn--color-scheme">light-on-dark</button>
-				<h2 class="days__hashtag heading"><a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer" class="days__hashtag--link">#100DaysOfCode</a>
+				<h2 class="first-section__hashtag"><a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer" class="first-section__hashtag--link">#100DaysOfCode</a>
 					<!-- <span class="link-info">Opens in a new tab</span> -->
 				</h2>
-				<h3 class="days__twitter">
-					<a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer" class="days__twitter-handle">@devCKVargas</a>
+				<h3 class="first-section__twitter">
+					<a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer" class="first-section__twitter-handle">@devCKVargas</a>
 					<!-- <span class="link-info">Opens in a new tab</span> -->
 				</h3>
-			</main>
-			<aside class="list">
-				<div class="list__first">
-					<h2 class="list__title heading">📖 Today</h2>
+			</section>
+			<main class="list">
+				<section class="list__first">
+					<h2 class="list__title heading">📖 Discoveries</h2>
 					<ul class="list__box">
 						<li class="list__item">
-							<h3>mixin: add mising</h3>
-							<h3><a href="https://twitter.com/devCKVargas" target="_blank" rel="noopener noreferrer">test Lorem, ipsum.</a></h3>
-						</li>
-						<li class="list__item">
-							<h3>HTML, ipsum dolor.</h3>
-						</li>
-						<li class="list__item">
-							<h3>CSS, ipsum dolor.</h3>
-						</li>
-						<li class="list__item">
-							<h3>Javascript, ipsum dolor.</h3>
+							<h3>light &amp; dark mode without CSS</h3>
+							<h3>CSS: color-scheme: dark light;</h3>
+							<h3>@media (prefers-color-scheme) { @content; }</h3>
+							<h3>rel=noopener noreferrer</h3>
 						</li>
 					</ul>
-				</div>
-				<div class="list__second">
+				</section>
+				<section class="list__second">
 					<h2 class="list__title heading">👨‍💻 This site</h2>
 					<ul class="list__box">
 						<li class="list__item">
-							<h3>mixin: add mising Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis unde dolorum minima quasi architecto</h3>
-							<h4>Lorem ipsum dolor sit amet.</h4>
-						</li>
-						<li class="list__item">
-							<h3>mixin: add mising</h3>
-						</li>
-						<li class="list__item">
-							<h3>HTML, ipsum dolor.</h3>
-						</li>
-						<li class="list__item">
-							<h3>CSS, ipsum dolor.</h3>
-						</li>
-						<li class="list__item">
-							<h3>Javascript, ipsum dolor.</h3>
+							<h3>Add: utilities, layout, link-info</h3>
+							<h3>Link-info: tooltip for links</h3>
+							<h3>Rename: left &amp; right scss to their own</h3>
 						</li>
 					</ul>
-				</div>
-			</aside>
+				</section>
+			</main>
 		</div>
 	</body>
 

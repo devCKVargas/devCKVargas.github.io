@@ -4,9 +4,10 @@
 @import "utilities";
 @import "layout";
 
-//@ pages
-@import "days";
+//@ sections
+@import "first-section";
 @import "list";
 
 //@ components
-@import "link-info"
+@import "link-info";
+@import "btn";
