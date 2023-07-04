@@ -67,8 +67,8 @@ html {
 }
 
 body {
-	min-height: 100vh; // for fallback
 	min-height: -webkit-fill-available;
+	min-height: 100vh;
 
 	@supports(min-height: 100svh) {
 		min-height: 100svh;
