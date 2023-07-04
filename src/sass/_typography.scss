@@ -55,3 +55,56 @@ p {
 
 	}
 }
+
+.first-section {
+	color: $clr-left-text;
+	text-align: center;
+
+	@include media(1024em) {
+		text-align: left;
+	}
+
+	&__spent {
+		font-size: clamp(1.5rem, calc(4vw + 1rem), 7.6rem);
+	}
+
+	&__hashtag {
+		font-size: clamp(1.2rem, calc(4vw + .2rem), 7.6rem);
+	}
+
+	&__twitter-handle {
+		font-size: clamp(1rem, 3vw, 2.4rem);
+	}
+
+	a:link,
+	a:visited {
+		text-decoration: none;
+		color: $clr-left-text;
+	}
+
+	&__spent {
+		color: $clr-primary;
+	}
+}
+
+.list {
+	font-size: clamp(1rem, 4vw, min(calc(.75vw + 1.6rem), 2.8rem));
+
+	& * {
+		font-size: inherit;
+	}
+
+	& *::marker,
+	a:link,
+	a:visited {
+		color: $clr-primary;
+	}
+
+	&__title {
+		font-size: clamp(1.2rem, 5.5vw, min(calc(2vw + 1.6rem), 4.8rem));
+	}
+
+	&__item--indent {
+		font-size: clamp(1rem, 3.5vw, .8em);
+	}
+}

@@ -9,14 +9,14 @@
 	left: 0;
 	z-index: 100;
 	visibility: hidden;
-	transition: background-color .2s ease-in;
+	// transition: background-color .2s ease-in;
 
 	//$ test
 	// background-color: salmon;
 }
 
-a:hover+.link-info,
-a:focus+.link-info {
+a:hover + .link-info,
+a:focus + .link-info {
 	visibility: visible;
 	background-color: $clr-primary;
 	border: 1px solid $clr-white;

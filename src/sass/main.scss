@@ -1,12 +1,11 @@
 @import "mixin";
+@import "normalized";
 @import "base";
 @import "typography";
 @import "utilities";
 @import "layout";
 
 //@ sections
-@import "first-section";
-@import "list";
 
 //@ components
 @import "link-info";

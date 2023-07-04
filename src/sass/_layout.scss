@@ -2,25 +2,29 @@
 	display: grid;
 	place-content: center;
 
-	::-webkit-scrollbar {
+	*::-webkit-scrollbar {
 		width: 15px;
-		height: 15px;
+		height: 10px;
+
 
 		&-thumb {
-			background-color: $clr-primary;
 			border-radius: 100rem;
+			border: .3rem solid transparent;
+			box-shadow: inset 0 0 0 10rem $clr-primary;
 
 			&:hover {
-				background-color: hsl(343, 60%, 40%)
+				box-shadow: inset 0 0 0 10rem hsl(343, 60%, 40%);
 			}
 
 			&:active {
-				background-color: hsl(343, 60%, 53%)
+				box-shadow: inset 0 0 0 10rem hsl(343, 60%, 53%);
 			}
 		}
 	}
 
-	scrollbar-color: $clr-primary rgba($clr-white, .75);
+	@supports(scrollbar-color: #000 #333) {
+		scrollbar-color: $clr-primary rgba($clr-white, .75);
+	}
 }
 
 .container {
@@ -31,21 +35,76 @@
 	display: grid;
 	overflow: hidden;
 	// grid-template-columns: repeat(auto-fit, minmax(48.45rem, 1fr));
-	box-shadow: 1.5rem 1.5rem 0 rgba($clr-black, .85);
+	box-shadow: 0rem 2.5rem 0 rgba($clr-black, .85);
 
 	@include media(340em) {
 		margin: 2rem;
+		box-shadow: 1.5rem 2.5rem 0 rgba($clr-black, .85);
 	}
 
 	@include media(600em) {}
 
 	@include media(1024em) {
+		margin: 3rem;
 		grid-template-columns: repeat(2, 1fr);
+		box-shadow: 2rem 4rem 0 rgba($clr-black, .85);
 	}
 }
 
-
 .first-section {
+	$padding-block: 3rem;
+	$padding-inline: 6rem;
 	display: grid;
 	place-content: center;
+
+	background-color: rgba($clr-white, 0.5);
+	// padding: $padding-block 0;
+	padding: min(12vw, 6rem);
+	padding: min(12vw, min(6vw, 8rem));
+
+	@include media(1024em) {
+		// padding: $padding-block $padding-inline;
+	}
+
+	a:link,
+	a:visited {
+		display: inline-block;
+	}
+
+	&__twitter {
+		margin-top: min(2vw, 4rem);
+	}
+
+	&__twitter-handle {
+		padding: min(1vw, 1.5rem) min(2.5vw, 2.5rem);
+		border-radius: 100rem;
+		background-color: rgba($clr-white, .25);
+	}
+}
+
+.list {
+	padding: min(3vw, 4rem);
+	padding-left: min(5vw, 6.5rem);
+
+	display: grid;
+	row-gap: min(1.5vw, 3rem);
+	overflow-y: auto;
+
+	@media only screen and (max-width: 300px) {
+		padding: 1.5rem;
+		padding-left: 2rem;
+	}
+
+	&__item--indent {
+		list-style: none;
+		background-color: rgba($clr-white, .4);
+		padding: .25rem 1rem;
+		border-radius: 5px;
+	}
+
+	& > * {
+		display: grid;
+		row-gap: min(1.5vw, 1rem);
+	}
+
 }

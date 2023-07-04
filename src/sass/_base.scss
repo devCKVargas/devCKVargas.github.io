@@ -39,6 +39,8 @@ $desktop: 1024em;
 $left-height: 20vh;
 $right-height: 80vh;
 
+$anim-speed: all 0.75s;
+
 // reset
 *,
 *::before,
@@ -62,11 +64,10 @@ html {
 	min-height: 100vh;
 	min-height: -moz-available;
 	min-height: -webkit-fill-available;
-	min-height: fill-available;
 }
 
 body {
-	min-height: 100vh;
+	min-height: 100vh; // for fallback
 	min-height: -webkit-fill-available;
 
 	@supports(min-height: 100svh) {
@@ -76,7 +77,7 @@ body {
 
 .body {
 	background-image: $clr-bg,
-		url(../assets/img/cloud.jpg);
+		url(../assets/img/cloud.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -85,12 +86,12 @@ body {
 	&::after {
 		content: "</>";
 		font-family: sans-serif;
-		font-size: clamp(4rem, 10vw, 7.2rem);
+		font-size: clamp(2rem, 10vw, 7.2rem);
 		color: $clr-primary;
 		position: fixed;
 		z-index: -1;
-		right: 3rem;
-		bottom: 2rem;
+		right: min(6vw, 3rem);
+		bottom: min(6vw, 2rem);
 	}
 
 	:focus {
