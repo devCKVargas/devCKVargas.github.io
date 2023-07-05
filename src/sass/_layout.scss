@@ -73,7 +73,14 @@
 
 	&__twitter {
 		margin-top: min(2vw, 4rem);
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media(1024em) {
+			margin-left: 0;
+		}
 	}
+
 
 	&__twitter-handle {
 		padding: min(1vw, 1.5rem) min(2.5vw, 2.5rem);
@@ -93,6 +100,10 @@
 	@media only screen and (max-width: 300px) {
 		padding: 1.5rem;
 		padding-left: 2rem;
+	}
+
+	&__item {
+		max-width: max-content;
 	}
 
 	&__item--indent {
