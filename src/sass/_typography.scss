@@ -57,11 +57,12 @@ p {
 }
 
 .first-section {
-	color: $clr-left-text;
+	color: var(--clr-left-text);
 	text-align: center;
+	text-align: left;
 
-	@include media(1024em) {
-		text-align: left;
+	@include media(340em) {
+		// text-align: left;
 	}
 
 	&__spent {
@@ -70,6 +71,7 @@ p {
 
 	&__hashtag {
 		font-size: clamp(1.2rem, calc(4vw + .2rem), 7.6rem);
+		color: var(--clr-link);
 	}
 
 	&__twitter-handle {
@@ -79,11 +81,12 @@ p {
 	a:link,
 	a:visited {
 		text-decoration: none;
-		color: $clr-left-text;
+		// color: var(--clr-left-text);
+		color: inherit;
 	}
 
 	&__spent {
-		color: $clr-primary;
+		color: var(--clr-primary);
 	}
 }
 
@@ -97,11 +100,12 @@ p {
 	& *::marker,
 	a:link,
 	a:visited {
-		color: $clr-primary;
+		color: var(--clr-primary);
 	}
 
 	&__title {
 		font-size: clamp(1.2rem, 5.5vw, min(calc(2vw + 1.6rem), 4.8rem));
+		color: var(--clr-primary);
 	}
 
 	&__item--indent {

@@ -1,0 +1,57 @@
+.toggle {
+	--border: 3px solid;
+	display: flex;
+	align-items: center;
+
+	&__input {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+
+		&:focus + .toggle-track {
+			outline: 2px solid var(--clr-primary);
+			border-radius: 999rem;
+		}
+	}
+
+	&-track {
+		background: transparent;
+		border: var(--border) var(--clr-primary);
+		border-radius: 999rem;
+		cursor: pointer;
+		display: flex;
+		height: var(--track-height);
+		width: var(--track-width);
+		position: relative;
+	}
+
+	&-indicator {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: var(--clr-primary);
+		border-radius: var(--toggle-indicator-size);
+		width: var(--toggle-indicator-size);
+		height: var(--toggle-indicator-size);
+		// outline: 2px solid transparent;
+		position: absolute;
+		left: 3px;
+		// bottom: 2px;
+		top: 2px;
+		transition: transform var(--speed);
+	}
+
+	&__input:checked + &-track &-indicator {
+		// background: var(--clr-primary)--dark;
+		transform: translateX(calc((var(--track-width) - var(--track-height)) - 2px));
+	}
+
+	&__input:checked + &-track {
+		border: var(--border) transparent;
+		background: hsl(225, 5%, 16%);
+	}
+}

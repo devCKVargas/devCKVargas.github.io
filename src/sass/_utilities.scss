@@ -1,7 +1,3 @@
 .colored {
-	color: $clr-primary !important;
-
-	&--dark {
-		color: $clr-primary--dark !important;
-	}
+	color: var(--clr-primary) !important;
 }
