@@ -1,10 +1,10 @@
-.body {
+body {
 	display: grid;
 	place-content: center;
 
 	*::-webkit-scrollbar {
-		width: 15px;
-		height: 10px;
+		width: var(--scrollbar-width);
+		height: var(--scrollbar-height);
 
 
 		&-thumb {
@@ -13,11 +13,11 @@
 			box-shadow: inset 0 0 0 10rem var(--clr-primary);
 
 			&:hover {
-				box-shadow: inset 0 0 0 10rem hsl(343, 60%, 40%);
+				box-shadow: inset 0 0 0 10rem var(--scrollbar-hover);
 			}
 
 			&:active {
-				box-shadow: inset 0 0 0 10rem hsl(343, 60%, 53%);
+				box-shadow: inset 0 0 0 10rem var(--scrollbar-active);
 			}
 		}
 	}
@@ -28,21 +28,43 @@
 }
 
 .container {
+	$margin-block: 4rem;
+	$margin-inline: 3rem;
+	$margin-bottom: $margin-block * 1.5;
 	max-width: 160rem;
 	max-height: 90rem;
+	// max-height: 100rem;
+	// max-height: 80vh;
 	border-radius: 16px;
-
-	display: grid;
-	overflow: hidden;
 	box-shadow: 0rem 2.5rem 0 rgba($clr-black, .85);
+	overflow: hidden;
+	display: grid;
+	margin-top: $margin-block;
+	margin-bottom: $margin-bottom;
 
-	@include media(340em) {
-		margin: 2rem;
+	// @supports(max-height: 80svh) {
+	// max-height: 80svh;
+	// }
+
+	// @media only screen and (orientation: landscape) {
+	// min-height: 30rem;
+	// max-height: 80vw;
+	// max-height: 60rem;
+	// }
+
+
+	// @media only screen and (max-width: 300px) {
+	// max-height: 30rem;
+	// }
+
+	// margin-bottom: calc(var(--margin-block) * 2);
+	@include media(375em) {
+		// margin: var(--margin-block) var(--margin-inline);
+		// margin-right: calc(var(--margin-inline) * 1.5);
 		box-shadow: 1.5rem 2.5rem 0 rgba($clr-black, .85);
 	}
 
 	@include media(1024em) {
-		margin: 3rem;
 		grid-template-columns: repeat(2, 1fr);
 		box-shadow: 2rem 4rem 0 rgba($clr-black, .85);
 	}
@@ -91,13 +113,18 @@
 	&__twitter-handle {
 		padding: .625em 1.125em;
 		border-radius: 100rem;
-		background-color: rgba($clr-white, .25);
+		background-color: var(--bg-twitter-handle);
 	}
 }
 
 .list {
-	padding: min(3vw, 4rem);
-	padding-left: min(5vw, 6.5rem);
+	$list-padding-left: 4ch;
+	$list-padding-top: min(3vw, 2rem);
+	padding-top: $list-padding-top;
+	padding-bottom: min(3vw, 4rem);
+	padding-bottom: min(3vw, 4rem);
+	padding-left: $list-padding-left;
+	padding-right: 3ch;
 	background: var(--bg-second-section);
 
 	display: grid;
@@ -107,6 +134,22 @@
 	@media only screen and (max-width: 300px) {
 		padding: 1.5rem;
 		padding-left: 2rem;
+	}
+
+	// &__box {}
+
+	&__title {
+		$title-padding-left: 2.5ch;
+		$title-padding-top: .75rem;
+		position: sticky;
+		$title-padding-bottom: 1.5rem;
+		top: calc($list-padding-top * -1);
+		width: calc((100% + $list-padding-left));
+		padding: $title-padding-top 0 $title-padding-bottom 0;
+		padding-left: $title-padding-left;
+		margin-left: -$title-padding-left;
+		// background-color: lightsalmon;
+		//todo: add bg when sticky activates
 	}
 
 	&__item {
@@ -121,8 +164,8 @@
 	}
 
 	& > * {
-		display: grid;
-		row-gap: min(1.5vw, 1rem);
+		// display: grid;
+		// row-gap: min(1.5vw, 1rem);
 	}
 
 }
