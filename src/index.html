@@ -33,35 +33,49 @@
 		<div class="container">
 			<section class="first-section">
 				<h1 class="first-section__spent colored" id="current-day"></h1>
-				<label for="toggle" class="toggle">
+
+				<!-- <label for="toggle" class="toggle">
 					<input type="checkbox" name="color" id="toggle" class="toggle__input">
 					<span class="toggle-track">
 						<span class="toggle-indicator"></span>
 					</span>
-				</label>
+				</label> -->
+
+
 				<h2 class="first-section__hashtag"><a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer" class="first-section__hashtag--link">#100DaysOfCode</a>
 				</h2>
 				<h3 class="first-section__twitter">
 					<a href="https://github.com/devCKVargas" target="_blank" rel="noopener noreferrer" class="first-section__twitter-handle">@devCKVargas</a>
 				</h3>
+
+				<!-- $ input svg link -->
+				<label class="theme">
+					<input type="checkbox" name="theme-toggler" id="theme-toggler" class="theme__input">
+					<label for="theme-toggler" class="haha">
+						<svg class="icon icon-moon">
+							<use xlink:href="assets/svg/sprite.svg#icon-moon-fill"></use>
+						</svg>
+					</label>
+				</label>
+
 			</section>
 			<main class="list">
 				<!-- @ 📃 list starts here! -->
+
 				<section>
 					<h2 class="list__title colored">📖 Discoveries</h2>
 					<ul class="list__box">
-						<li class="list__item">100% vs 100vh</li>
-						<li class="list__item"><a href="https://whatismyviewport.com/" rel="noopener noreferrer">whatsmyviewport.com</a></li>
-						<li class="list__item">markdown preview vscode shortcut</li>
+						<li class="list__item"><span class="colored">Media queries</span>: range syntax</li>
+						<list class="list__item--indent">@media (width &gt;= 300px) and (width &lt;= 600px)</list>
 					</ul>
 				</section>
 				<section>
 					<h2 class="list__title colored">👨‍💻 My app</h2>
 					<ul class="list__box">
-						<li class="list__item"><span class="colored">Fix</span>: html, body height on both <br> -moz &amp; -webkit based browsers (test)</li>
-						<li class="list__item"><span class="colored">Remove</span>: unused font-family</li>
-						<li class="list__item"><span class="colored">Use</span>: sticky on list title</li>
-						<li class="list__item"><span class="colored">Add</span>: list title background</li>
+						<li class="list__item"><span class="colored">Fix</span>: list links has same z-index as list title</li>
+						<li class="list__item"><span class="colored">Modify</span>: dark mode toggle button</li>
+						<li class="list__item"><span class="colored">Add</span>: theme toggle svgs (dark/light mode)</li>
+						<li class="list__item"><span class="colored">Layout</span>: adjust wearables &amp; landscape view for every devices</li>
 					</ul>
 				</section>
 				<!-- <section>
