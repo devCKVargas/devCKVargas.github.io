@@ -26,6 +26,10 @@ $mobile: 600em;
 $tablet: 768em;
 $desktop: 1024em;
 
+// wearables
+$wearables-padding: 1.5rem;
+$werables-list-padding-left: 3.5ch;
+
 //! CSS variables
 :root {
 	--clr-primary: hsl(343, 63%, 50%);
@@ -51,11 +55,22 @@ $desktop: 1024em;
 	--bg-img: linear-gradient(to top left, rgba(var(--blue-start), var(--bg-alpha)), rgba(var(--blue-end), var(--bg-alpha))), url(../assets/img/cloud.webp);
 
 	// theme toggle btn
-	--toggle-indicator-size: clamp(1rem, 3vw, 4rem);
-	--track-width: calc(var(--toggle-indicator-size) * 2.5);
-	--track-height: calc(var(--toggle-indicator-size) + 0.6rem);
-	--track-height: calc(var(--toggle-indicator-size) + 1rem);
+	--toggle-indicator-size: clamp(1.2rem, 3vw, 4rem);
+	--track-width: calc(var(--toggle-indicator-size) * 3);
+	--track-height: calc(var(--toggle-indicator-size) + .8rem);
 	--speed: 0.2s;
+
+	@media only screen and (max-width: 300px) {
+		--toggle-indicator-size: 1.125rem;
+		--track-width: calc(var(--toggle-indicator-size) * 2.5);
+		--track-height: calc(var(--toggle-indicator-size) + 0.6rem);
+	}
+
+	@include media(600em) {
+		--toggle-indicator-size: clamp(1.2rem, 3vw, 4rem);
+		--track-width: calc(var(--toggle-indicator-size) * 2.5);
+		--track-height: calc(var(--toggle-indicator-size) + 1rem);
+	}
 }
 
 @media (prefers-color-scheme: dark) {
