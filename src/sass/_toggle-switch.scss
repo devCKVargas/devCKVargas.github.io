@@ -1,147 +1,66 @@
+$toggle-size: clamp(2.5rem, 10vw, 8rem);
+
 .toggle {
-	--border: clamp(.1rem, .6vw, .3rem) solid;
-	display: flex;
 	align-items: center;
-
-
-	&__input {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-
-		&:focus + .toggle-track {
-			// outline: 2px solid var(--clr-primary);
-			border-radius: 999rem;
-		}
-	}
-
-	&-track {
-		background: transparent;
-		background: var(--bg-indent); //$ test
-		border: var(--border) var(--clr-primary);
-		border-radius: 999rem;
-		cursor: pointer;
-		display: flex;
-		height: var(--track-height);
-		width: var(--track-width);
-		position: relative;
-	}
-
-	&-indicator {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: var(--clr-primary);
-		border-radius: var(--toggle-indicator-size);
-		width: var(--toggle-indicator-size);
-		height: var(--toggle-indicator-size);
-		// outline: 2px solid transparent;
-		position: absolute;
-		left: 3px;
-		// bottom: 2px;
-		top: 2px;
-		transition: transform var(--speed);
-
-		@media only screen and (max-width: 300px) {
-			// top: 0;
-		}
-
-		@include media(1024em) {}
-	}
-
-	&__input:checked + &-track &-indicator {
-		// background: var(--clr-primary)--dark;
-		transform: translateX(calc((var(--track-width) - var(--track-height)) - 2px));
-	}
-
-	&__input:checked + &-track {
-		background: hsl(225, 5%, 16%);
-
-		//$ test
-		// border: var(--border) transparent;
-	}
-}
-
-
-// .theme {
-// 	position: absolute;
-// 	right: 0;
-// 	// bottom: min(2vh, 3rem);
-// 	top: 4rem;
-
-// 	&__input {
-// 		clip: rect(0 0 0 0);
-// 		clip-path: inset(50%);
-// 		height: 1px;
-// 		overflow: hidden;
-// 		position: absolute;
-// 		white-space: nowrap;
-// 		width: 1px;
-
-// 		&:checked + .theme__icon {
-// 			background-image: url(../assets/svg/moon-fill.svg);
-// 		}
-// 	}
-
-// 	&__icon {
-// 		$icon-size: 3rem;
-// 		cursor: pointer;
-// 		// display: inline-block;
-// 		display: flex;
-// 		// position: absolute;
-// 		// top: -1rem;
-// 		width: $icon-size;
-// 		height: $icon-size;
-// 		background-image: url(../assets/svg/sun.svg);
-// 		fill: $clr-white;
-// 		color: $clr-white;
-// 	}
-// }
-
-.theme {
-	grid-column: 2 / 3;
-	align-self: center;
-	margin-bottom: .5rem;
-
-	&__input {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-
-		&:focus .haha {
-			outline: 2px solid var(--clr-primary);
-		}
-	}
-}
-
-.icon {
-	$icon-size: 5rem;
-	cursor: pointer;
+	position: relative;
 	display: flex;
-	width: $icon-size;
-	height: $icon-size;
-	background-color: lightsalmon;
-	fill: $clr-white;
-	overflow: visible;
+	width: $toggle-size;
+	height: calc($toggle-size / 1.85);
+	border-radius: 999rem;
+	background-color: var(--bg-toggle);
+	overflow: hidden;
+	cursor: pointer;
 
-	&-moon {
-		background-color: unset;
-		fill: var(--clr-primary);
-		width: $icon-size;
-		height: $icon-size;
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: calc($toggle-size / 2.45);
+		height: calc($toggle-size / 2.45);
+		border-radius: 999rem;
+		// top: 1rem;
+		left: calc($toggle-size / 15);
+		transition: transform 0.35s ease;
+	}
+
+	&::before {
+		background-color: var(--clr-primary);
+	}
+
+	&:after {
+		background-color: var(--bg-toggle);
+		// background-color: green;
+		left: -35%;
+		transform: scale(0.00001);
 	}
 }
 
-.theme,
-.first-section__spent {
-	//todo move twitter to layout
-	grid-row: 1 / 2;
+input[type="checkbox"] {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+
+	&:checked + label {
+		&::before {
+			// background-color: palevioletred;
+			transform: translateX(calc($toggle-size / 2.25));
+		}
+
+		&::after {
+			$translateX: calc($toggle-size / 1.45);
+			$translateY: max(-1rem, -0.5vw);
+			// $translateY: -0.5vw;
+			// $translateX: ;
+			transform: translateX($translateX) translateY($translateY) scale(1);
+		}
+	}
+
+	&:focus + .toggle {
+		outline: 1px solid var(--clr-primary);
+	}
 }

@@ -17,8 +17,7 @@ $clr-white: #eee;
 $clr-black: #000;
 
 // font
-$ff-main: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-	Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$ff-main: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 $ff-emoji: "Noto Color Emoji";
 
 // font breakpoint
@@ -39,38 +38,26 @@ $werables-list-padding-left: 3.5ch;
 
 	--scrollbar-hover: hsl(343, 63%, 40%);
 	--scrollbar-active: hsl(343, 80%, 60%);
-	--scrollbar-width: 15px;
-	--scrollbar-height: 10px;
+	--scrollbar-width: 1rem;
+	--scrollbar-height: 1rem;
 
 	--bg-container: hsla(0, 0%, 100%, 0.5);
 	--bg-first-section: hsla(0, 0%, 100%, 0.4);
 	--bg-twitter-handle: hsla(0, 0%, 93%, 0.25);
 	--bg-second-section: unset;
 	--bg-indent: hsla(0, 0%, 93%, 0.4);
-	--bg-border: #fff;
+	--bg-toggle: hsl(222, 22%, 91%);
 
 	--bg-alpha: 0.75;
 	--blue-start: 100, 171, 252;
 	--blue-end: 52, 93, 249;
-	--bg-img: linear-gradient(to top left, rgba(var(--blue-start), var(--bg-alpha)), rgba(var(--blue-end), var(--bg-alpha))), url(../assets/img/cloud.webp);
-
-	// theme toggle btn
-	--toggle-indicator-size: clamp(1.2rem, 3vw, 4rem);
-	--track-width: calc(var(--toggle-indicator-size) * 3);
-	--track-height: calc(var(--toggle-indicator-size) + .8rem);
-	--speed: 0.2s;
-
-	@media only screen and (max-width: 300px) {
-		--toggle-indicator-size: 1.125rem;
-		--track-width: calc(var(--toggle-indicator-size) * 2.5);
-		--track-height: calc(var(--toggle-indicator-size) + 0.6rem);
-	}
-
-	@include media(600em) {
-		--toggle-indicator-size: clamp(1.2rem, 3vw, 4rem);
-		--track-width: calc(var(--toggle-indicator-size) * 2.5);
-		--track-height: calc(var(--toggle-indicator-size) + 1rem);
-	}
+	--bg-img: linear-gradient(
+			to top left,
+			rgba(var(--blue-start), var(--bg-alpha)),
+			rgba(var(--blue-end), var(--bg-alpha))
+		),
+		url(../assets/img/cloud.webp);
+	color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -87,13 +74,75 @@ $werables-list-padding-left: 3.5ch;
 		--bg-twitter-handle: hsla(0, 0%, 0.5%, 0.6);
 		--bg-second-section: hsla(0, 0%, 2.3%, 0.875);
 		--bg-indent: hsla(0, 0%, 0.5%, 0.6);
-		--bg-border: var(--clr-primary);
+		// --bg-border: var(--clr-primary);
+		--bg-toggle: hsl(225, 5%, 16%);
 
 		--orange-start: 155, 70, 121;
 		--orange-end: 33, 61, 174;
-		--bg-img: linear-gradient(to top left, rgba(var(--orange-start), var(--bg-alpha)), rgba(var(--orange-end), var(--bg-alpha))), url(../assets/img/cloud.webp);
-
+		--bg-img: linear-gradient(
+				to top left,
+				rgba(var(--orange-start), var(--bg-alpha)),
+				rgba(var(--orange-end), var(--bg-alpha))
+			),
+			url(../assets/img/cloud.webp);
+		color-scheme: dark;
 	}
+}
+
+html.light {
+	--clr-primary: hsl(343, 63%, 50%);
+	--clr-left-text: hsl(0, 0%, 20%);
+	--clr-link: hsl(0, 0%, 20%);
+	--clr-text: hsl(225, 5%, 16%);
+
+	--scrollbar-hover: hsl(343, 63%, 40%);
+	--scrollbar-active: hsl(343, 80%, 60%);
+	--scrollbar-width: 1rem;
+	--scrollbar-height: 1rem;
+
+	--bg-container: hsla(0, 0%, 100%, 0.5);
+	--bg-first-section: hsla(0, 0%, 100%, 0.4);
+	--bg-twitter-handle: hsla(0, 0%, 93%, 0.25);
+	--bg-second-section: unset;
+	--bg-indent: hsla(0, 0%, 93%, 0.4);
+	--bg-toggle: hsl(222, 22%, 91%);
+
+	--bg-alpha: 0.75;
+	--blue-start: 100, 171, 252;
+	--blue-end: 52, 93, 249;
+	--bg-img: linear-gradient(
+			to top left,
+			rgba(var(--blue-start), var(--bg-alpha)),
+			rgba(var(--blue-end), var(--bg-alpha))
+		),
+		url(../assets/img/cloud.webp);
+	color-scheme: light;
+}
+
+html.dark {
+	--clr-primary: hsl(17, 65%, 53%);
+	--clr-link: hsla(251, 39%, 51%);
+	--clr-text: hsl(0, 0%, 82%);
+	--clr-left-text: var(--clr-text);
+
+	--scrollbar-hover: hsl(17, 65%, 40%);
+	--scrollbar-active: hsl(17, 100%, 60%);
+
+	--bg-first-section: hsla(0, 0%, 0%, 0.875);
+	--bg-twitter-handle: hsla(0, 0%, 0.5%, 0.6);
+	--bg-second-section: hsla(0, 0%, 2.3%, 0.875);
+	--bg-indent: hsla(0, 0%, 0.5%, 0.6);
+	--bg-toggle: hsl(225, 5%, 16%);
+
+	--orange-start: 155, 70, 121;
+	--orange-end: 33, 61, 174;
+	--bg-img: linear-gradient(
+			to top left,
+			rgba(var(--orange-start), var(--bg-alpha)),
+			rgba(var(--orange-end), var(--bg-alpha))
+		),
+		url(../assets/img/cloud.webp);
+	color-scheme: dark;
 }
 
 // reset
@@ -112,17 +161,16 @@ h3 {
 }
 
 body {
-	// min-height: 100vh;
+	min-height: 100vh;
 	min-height: -webkit-fill-available;
-	height: 100vh;
+	// height: 100vh;
 
-	@supports (min-height: 100svh) {
-		height: 100svh;
+	@supports (height: 100svh) {
+		// height: 100svh;
 	}
 }
 
-@supports(min-height: -moz-available) {
-
+@supports (min-height: -moz-available) {
 	html,
 	body {
 		min-height: -moz-available;
@@ -132,8 +180,28 @@ body {
 
 html {
 	height: -webkit-fill-available;
-	font: 700 62.5% / normal $ff-main; //$ 10px
-	color-scheme: light;
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+	font-weight: 700;
+	line-height: normal;
+	font-family: $ff-main;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	:after,
+	:before {
+		scroll-behavior: auto !important;
+		-webkit-animation-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }
 
 body {

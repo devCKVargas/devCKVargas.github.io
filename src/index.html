@@ -11,7 +11,7 @@
 		<!--@ font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap">
 
 		<!--@ favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -33,44 +33,27 @@
 		<div class="container">
 			<section class="first-section">
 				<h1 class="first-section__spent colored" id="current-day"></h1>
-
-				<!-- <label for="toggle" class="toggle">
-					<input type="checkbox" name="color" id="toggle" class="toggle__input">
-					<span class="toggle-track">
-						<span class="toggle-indicator"></span>
-					</span>
-				</label> -->
-
-
+				<!-- @ theme toggle -->
+				<input type="checkbox" name="color" id="toggle" class="toggle__input" title="theme toggler">
+				<label for="toggle" class="toggle" aria-label="theme toggle"></label>
 				<h2 class="first-section__hashtag"><a href="https://twitter.com/hashtag/100DaysOfCode" target="_blank" rel="noopener noreferrer" class="first-section__hashtag--link">#100DaysOfCode</a>
 				</h2>
 				<h3 class="first-section__twitter">
 					<a href="https://github.com/devCKVargas" target="_blank" rel="noopener noreferrer" class="first-section__twitter-handle">@devCKVargas</a>
 				</h3>
-
-				<!-- $ input svg link -->
-				<label class="theme">
-					<input type="checkbox" name="theme-toggler" id="theme-toggler" class="theme__input">
-					<label for="theme-toggler" class="haha">
-						<svg class="icon icon-moon">
-							<use xlink:href="assets/svg/sprite.svg#icon-moon-fill"></use>
-						</svg>
-					</label>
-				</label>
-
 			</section>
 			<main class="list">
 				<!-- @ 📃 list starts here! -->
 
 				<section>
-					<h2 class="list__title colored">📖 Discoveries</h2>
+					<h2 class="list__title colored">📖 Day 54 content</h2>
 					<ul class="list__box">
 						<li class="list__item"><span class="colored">Media queries</span>: range syntax</li>
-						<list class="list__item--indent">@media (width &gt;= 300px) and (width &lt;= 600px)</list>
+						<li class="list__item--indent">@media (width &gt;= 300px) and (width &lt;= 600px)</li>
 					</ul>
 				</section>
 				<section>
-					<h2 class="list__title colored">👨‍💻 My app</h2>
+					<h2 class="list__title colored">👨‍💻 Rewrite: Day 8</h2>
 					<ul class="list__box">
 						<li class="list__item"><span class="colored">Fix</span>: list links has same z-index as list title</li>
 						<li class="list__item"><span class="colored">Modify</span>: dark mode toggle button</li>
@@ -78,13 +61,6 @@
 						<li class="list__item"><span class="colored">Layout</span>: adjust wearables &amp; landscape view for every devices</li>
 					</ul>
 				</section>
-				<!-- <section>
-					<h2 class="list__title colored">👨‍💻 FrontendMentor</h2>
-					<ul class="list__box">
-						<li class="list__item"><span class="colored">Started</span>: Results summary component</li>
-						<li class="list__item"><span class="colored">Use</span>: Tailwind CSS</li>
-					</ul>
-				</section> -->
 			</main>
 		</div>
 	</body>

@@ -1,4 +1,5 @@
 const links = document.getElementsByTagName("a");
+// const themeToggle = document.querySelector("#toggle");
 
 for (const link of links) {
 	const linkInfo = document.createElement("span");
@@ -27,3 +28,43 @@ dayCounter();
 // 	timeOfDay >= 13 ? (darkMode(), (darkModeBtn.checked = false)) : (darkModeBtn.checked = true);
 // };
 // autoMode();
+
+//! theme toggle button
+const themeToggle = document.querySelector("#toggle");
+const htmlElement = document.documentElement;
+
+htmlElement.classList.add("os-default");
+
+const setDarkMode = () => {
+	htmlElement.classList.add("dark");
+	htmlElement.classList.remove("os-default");
+	htmlElement.classList.remove("light");
+};
+
+const setLightMode = () => {
+	htmlElement.classList.add("light");
+	htmlElement.classList.remove("os-default");
+	htmlElement.classList.remove("dark");
+};
+
+themeToggle.addEventListener("click", () => {
+	htmlElement.classList.toggle("os-default");
+
+	if (themeToggle.checked) setDarkMode();
+	else setLightMode();
+});
+
+//! theme reacts to device color-scheme
+const colorSchemeQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+const setColorScheme = (colorScheme) => {
+	if (colorScheme.matches) {
+		// console.log("🌙: Dark mode");
+		themeToggle.checked = true;
+	} else {
+		// console.log("💡: Light mode");
+		themeToggle.checked = false;
+	}
+};
+
+setColorScheme(colorSchemeQueryList);
+colorSchemeQueryList.addEventListener("change", setColorScheme);
