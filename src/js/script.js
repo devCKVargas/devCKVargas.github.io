@@ -29,42 +29,83 @@ dayCounter();
 // };
 // autoMode();
 
-//! theme toggle button
+// const themeToggle = document.querySelector("#toggle");
+// const htmlElement = document.documentElement;
+
+// const setDarkMode = () => {
+// 	htmlElement.classList.add("dark");
+// 	htmlElement.classList.remove("os-default");
+// 	htmlElement.classList.remove("light");
+// 	localStorage.setItem("theme", "dark");
+// };
+
+// const setLightMode = () => {
+// 	htmlElement.classList.add("light");
+// 	htmlElement.classList.remove("os-default");
+// 	htmlElement.classList.remove("dark");
+// 	localStorage.setItem("theme", "light");
+// };
+
+// const setSystemTheme = () => {
+// 	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+// 	if (systemTheme === "dark") {
+// 		setDarkMode();
+// 		themeToggle.checked = true;
+// 	} else {
+// 		setLightMode();
+// 		themeToggle.checked = false;
+// 	}
+// };
+
+// themeToggle.addEventListener("click", () => {
+// 	if (themeToggle.checked) {
+// 		setDarkMode();
+// 	} else {
+// 		setLightMode();
+// 	}
+// });
+
+// window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setSystemTheme);
+
+// const savedTheme = localStorage.getItem("theme");
+// if (savedTheme === "dark") {
+// 	setDarkMode();
+// 	themeToggle.checked = true;
+// } else if (savedTheme === "light") {
+// 	setLightMode();
+// 	themeToggle.checked = false;
+// } else {
+// 	setSystemTheme();
+// }
+
 const themeToggle = document.querySelector("#toggle");
 const htmlElement = document.documentElement;
 
-htmlElement.classList.add("os-default");
-
-const setDarkMode = () => {
-	htmlElement.classList.add("dark");
-	htmlElement.classList.remove("os-default");
-	htmlElement.classList.remove("light");
+const setTheme = (theme) => {
+	htmlElement.classList.add(theme);
+	htmlElement.classList.remove(theme === "dark" ? "light" : "dark");
+	localStorage.setItem("theme", theme);
 };
 
-const setLightMode = () => {
-	htmlElement.classList.add("light");
-	htmlElement.classList.remove("os-default");
-	htmlElement.classList.remove("dark");
+const setSystemTheme = () => {
+	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	setTheme(systemTheme);
+	themeToggle.checked = systemTheme === "dark";
 };
 
-themeToggle.addEventListener("click", () => {
-	htmlElement.classList.toggle("os-default");
-
-	if (themeToggle.checked) setDarkMode();
-	else setLightMode();
-});
-
-//! theme reacts to device color-scheme
-const colorSchemeQueryList = window.matchMedia("(prefers-color-scheme: dark)");
-const setColorScheme = (colorScheme) => {
-	if (colorScheme.matches) {
-		// console.log("🌙: Dark mode");
-		themeToggle.checked = true;
-	} else {
-		// console.log("💡: Light mode");
-		themeToggle.checked = false;
-	}
+const toggleTheme = () => {
+	const theme = themeToggle.checked ? "dark" : "light";
+	setTheme(theme);
 };
 
-setColorScheme(colorSchemeQueryList);
-colorSchemeQueryList.addEventListener("change", setColorScheme);
+themeToggle.addEventListener("click", toggleTheme);
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setSystemTheme);
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark" || savedTheme === "light") {
+	setTheme(savedTheme);
+	themeToggle.checked = savedTheme === "dark";
+} else {
+	setSystemTheme();
+}
