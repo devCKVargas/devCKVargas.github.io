@@ -19,7 +19,7 @@
 		"watch": "npm-run-all --parallel watch:*",
 		"concat:css": "concat --output public/css/style.css public/css/icon-font.css public/css/main.css",
 		"addprefix": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-		"serve": "browser-sync start --server public --files public --port 5501 --b \"C:/Program Files/Mozilla Firefox_86/firefox86.exe\"",
+		"serve": "browser-sync start --server public --files public --port 5501",
 		"start": "npm-run-all copy --parallel watch serve",
 		"build": "npm-run-all copy:* build:* addprefix"
 	},
@@ -38,6 +38,7 @@
 		"prettier": "^3.0.0"
 	},
 	"overrides": {
-		"semver": "^7.5.4"
+		"semver": "^7.5.4",
+		"glob-parent": "^6.0.2"
 	}
 }
