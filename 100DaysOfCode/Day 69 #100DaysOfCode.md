@@ -38,4 +38,6 @@ Common IDE features
 * IntelliSense (Detect varaibles and functions and offer suggesttions during autocomplete)
 * Refactoring (Automatically updates the change in other files)
 
-## JavaScript
+## Programming with JavaScript
+
+### Week 1 (50% completion)
