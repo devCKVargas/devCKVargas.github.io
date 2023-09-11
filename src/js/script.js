@@ -1,3 +1,5 @@
+"use strict";
+
 const links = document.getElementsByTagName("a");
 // const themeToggle = document.querySelector("#toggle");
 
@@ -17,7 +19,7 @@ const dayCounter = () => {
 	const dateComplete = new Date(2023, 7, 14).getTime() / (1000 * 3600 * 24); //! Supposedly finish date: August 14, 2023
 	const remainingDays = dateComplete - dateNow;
 	const spentDays = Math.ceil(100 - remainingDays);
-	let rest = 13; //TODO add rest day */
+	let rest = 58; //TODO add rest day */
 	dayNumber.innerText = `Day ${spentDays - rest}`;
 };
 dayCounter();
